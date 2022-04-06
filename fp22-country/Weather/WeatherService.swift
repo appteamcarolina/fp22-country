@@ -68,15 +68,16 @@ public final class WeatherService: NSObject {
                     print("No Weather Handler")
                 }
             }
+            else {
+                print("Failed to decode JSON")
+            }
         }.resume()
     }
 }
 
 extension WeatherService: CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("Update call")
         guard let location = locations.first else {return}
-        print("Actual update")
         makeDataRequest(forCoordinates: location.coordinate)
     }
     
@@ -86,23 +87,26 @@ extension WeatherService: CLLocationManagerDelegate {
 }
 
 struct WeeklyForecastResponse: Decodable {
+    let lat: Double
+    let lon: Double
+    let timezone: String
     let daily: [DailyForecast]
 }
 struct DailyForecast: Decodable {
     let dt: Int
-    let sunrise: Int
-    let sunset: Int
+//    let sunrise: Int
+//    let sunset: Int
     
     let temp: TempForecast
     
-    let pressure: Int
-    let humidity: Int
-    let dew_point: Int
+//    let pressure: Int
+//    let humidity: Int
+//    let dew_point: Double
     
-    let weather: WeatherForecast
+    let weather: [WeatherForecast]
     
-    let rain: Double
-    let uvi: Double
+//    let rain: Double
+//    let uvi: Double
 }
 struct TempForecast: Decodable {
     let day: Double

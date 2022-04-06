@@ -12,12 +12,20 @@ struct WeatherView: View {
     @StateObject var vm = WeatherViewModel()
     
     var body: some View {
+        
         Form {
             Section("Location"){
                 Text("Country: \(vm.country)")
                 Text("City: \(vm.city)")
             }
-            
+            Section("Weather") {
+                List {
+                    ForEach(vm.dailyForecasts, id: \.dt) {
+                        dailyForecast in
+                        Text(dailyForecast.weather.first?.main ?? "")
+                    }
+                }
+            }
         }.onAppear {
             vm.refresh()
         }

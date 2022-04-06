@@ -12,6 +12,7 @@ public class WeatherViewModel: ObservableObject {
     
     @Published var country = ""
     @Published var city = ""
+    @Published var dailyForecasts: [DailyForecast] = []
     
     init() {
         weatherService = WeatherService()
@@ -23,11 +24,17 @@ public class WeatherViewModel: ObservableObject {
     
     private func geolocHandler(location: Location) {
         print("Location handler: \(location.city), \(location.country)")
-        city = location.city
-        country = location.country
+        DispatchQueue.main.async {
+            self.city = location.city
+            self.country = location.country
+        }
     }
     
     private func weatherHandler(weather: Weather) {
-        print(weather.response)
+//        print(weather.response)
+        print(weather.response.daily.count)
+        DispatchQueue.main.async {
+            self.dailyForecasts = weather.response.daily
+        }
     }
 }

@@ -12,10 +12,10 @@ struct ContentView: View {
         
         TabView {
             WeatherView().tabItem {
-                Label("Weather", systemImage: "cloud")
+                Label("Debugging Weather View", systemImage: "cloud")
             }
             AIView().tabItem {
-                Label("Debugging AI tool", systemImage: "ladybug")
+                Label("Debugging AI View", systemImage: "ladybug")
             }
         }
         
