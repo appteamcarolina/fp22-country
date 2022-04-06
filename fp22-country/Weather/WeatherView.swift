@@ -22,13 +22,38 @@ struct WeatherView: View {
                 List {
                     ForEach(vm.dailyForecasts, id: \.dt) {
                         dailyForecast in
-                        Text(dailyForecast.weather.first?.main ?? "")
+                        VStack(alignment:.leading) {
+                            Text(formatDate(date:Date(timeIntervalSince1970: dailyForecast.dt)))
+                            Text("Sunrise: " + formatTime(date:Date(timeIntervalSince1970: dailyForecast.sunrise)))
+                            Text("Sunset: " + formatTime(date:Date(timeIntervalSince1970: dailyForecast.sunset)))
+
+                            
+                            
+                            Text(dailyForecast.weather.first?.main ?? "")
+                            Text("Temperature: \(dailyForecast.temp.day, specifier: "%.2f")°C")
+                        }
+                        
                     }
                 }
             }
         }.onAppear {
             vm.refresh()
         }
+    }
+    // https://stackoverflow.com/questions/50712354/converting-utc-date-time-to-local-date-time-in-ios
+    func formatDate(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.locale = Locale.current
+        dateFormatter.dateFormat = "M/d"
+        return dateFormatter.string(from: date)
+    }
+    func formatTime(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.locale = Locale.current
+        dateFormatter.dateFormat = "hh:mm a"
+        return dateFormatter.string(from: date)
     }
 }
 

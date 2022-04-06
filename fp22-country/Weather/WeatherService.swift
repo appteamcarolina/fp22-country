@@ -93,9 +93,9 @@ struct WeeklyForecastResponse: Decodable {
     let daily: [DailyForecast]
 }
 struct DailyForecast: Decodable {
-    let dt: Int
-//    let sunrise: Int
-//    let sunset: Int
+    let dt: Double
+    let sunrise: Double
+    let sunset: Double
     
     let temp: TempForecast
     
