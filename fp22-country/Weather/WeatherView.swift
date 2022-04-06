@@ -12,7 +12,13 @@ struct WeatherView: View {
     @StateObject var vm = WeatherViewModel()
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/).onAppear { 
+        Form {
+            Section("Location"){
+                Text("Country: \(vm.country)")
+                Text("City: \(vm.city)")
+            }
+            
+        }.onAppear {
             vm.refresh()
         }
     }

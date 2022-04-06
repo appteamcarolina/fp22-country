@@ -10,6 +10,9 @@ import Foundation
 public class WeatherViewModel: ObservableObject {
     let weatherService: WeatherService
     
+    @Published var country = ""
+    @Published var city = ""
+    
     init() {
         weatherService = WeatherService()
     }
@@ -19,8 +22,9 @@ public class WeatherViewModel: ObservableObject {
     }
     
     private func geolocHandler(location: Location) {
-        print("Location handerl: \(location.country), \(location.country)")
-
+        print("Location handler: \(location.city), \(location.country)")
+        city = location.city
+        country = location.country
     }
     
     private func weatherHandler(weather: Weather) {
