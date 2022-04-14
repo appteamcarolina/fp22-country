@@ -17,3 +17,9 @@ struct AIResponse: Decodable {
 struct Choices: Decodable {
     let text: String
 }
+
+extension Choices {
+    static func placeholder() -> Choices {
+        Choices(text: "Wear shorts")
+    }
+}

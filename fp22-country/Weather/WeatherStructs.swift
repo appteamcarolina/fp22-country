@@ -12,6 +12,13 @@ public struct Location {
     let city: String
     let country: String
 }
+
+extension Location {
+    static func placeHolder() -> Location {
+        Location(city: "Chapel Hill", country: "USA")
+    }
+}
+
 public struct Weather {
     let response: WeekForecast
     
@@ -82,7 +89,18 @@ struct TempForecast: Decodable {
     let eve: Double
     let morn: Double
 }
+extension TempForecast {
+    static func placeholder() -> TempForecast {
+        TempForecast(day: 0.0, min: 0.0, max: 0.0, night: 0.0, eve: 0.0, morn: 0.0)
+    }
+}
 struct WeatherForecast: Decodable {
     let main: String
     let description: String
+}
+
+extension WeatherForecast {
+    static func placeholder() -> WeatherForecast {
+        WeatherForecast(main: "Sunny", description: "Sunny")
+    }
 }

@@ -7,6 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78386ECB2808BC2300337987 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78386ECA2808BC2300337987 /* WidgetKit.framework */; };
+		78386ECD2808BC2300337987 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78386ECC2808BC2300337987 /* SwiftUI.framework */; };
+		78386ED32808BC2500337987 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78386ED22808BC2500337987 /* Assets.xcassets */; };
+		78386ED52808BC2500337987 /* fp22_countryWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 78386ED12808BC2300337987 /* fp22_countryWidget.intentdefinition */; };
+		78386ED62808BC2500337987 /* fp22_countryWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 78386ED12808BC2300337987 /* fp22_countryWidget.intentdefinition */; };
+		78386ED92808BC2500337987 /* fp22-countryWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 78386EC82808BC2300337987 /* fp22-countryWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		78386EE32808BC9D00337987 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78386EE22808BC9D00337987 /* WidgetView.swift */; };
+		78386EE42808BCA200337987 /* SimpleEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78386EDE2808BC4100337987 /* SimpleEntry.swift */; };
+		78386EE52808BCA800337987 /* fp22_countryWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78386ECF2808BC2300337987 /* fp22_countryWidget.swift */; };
+		78386EE62808BCAD00337987 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78386EE02808BC5800337987 /* Provider.swift */; };
+		78386EE82808C35A00337987 /* WeatherStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FE835628079702000AFAAD /* WeatherStructs.swift */; };
+		78386EE92808C35A00337987 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C0B7927FD45980066F46A /* WeatherView.swift */; };
+		78386EEA2808C35A00337987 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C0B7B27FD45A30066F46A /* WeatherViewModel.swift */; };
+		78386EEB2808C35A00337987 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C0B7327FD3CEA0066F46A /* WeatherService.swift */; };
+		78386EEC2808C35A00337987 /* SummaryDayWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FE83642807BE60000AFAAD /* SummaryDayWeatherView.swift */; };
+		78386EED2808C35A00337987 /* WeatherUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FE83622807BB3B000AFAAD /* WeatherUtils.swift */; };
+		78386EEE2808C35A00337987 /* AsyncWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FE835A28079B46000AFAAD /* AsyncWeatherService.swift */; };
+		78386EEF2808C35A00337987 /* AsyncLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FE835C28079C22000AFAAD /* AsyncLocationManager.swift */; };
+		78386EF02808C35A00337987 /* FullDayWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FE835E2807AC2A000AFAAD /* FullDayWeatherView.swift */; };
+		78386EF12808C36200337987 /* AIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C0B6B27FD33BC0066F46A /* AIViewModel.swift */; };
+		78386EF22808C36200337987 /* AIStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FE8354280796F0000AFAAD /* AIStructs.swift */; };
+		78386EF32808C36200337987 /* AsyncAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FE835828079795000AFAAD /* AsyncAIService.swift */; };
+		78386EF42808C36200337987 /* AIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C0B6927FD00B10066F46A /* AIView.swift */; };
+		78386EF52808C36200337987 /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C0B6727FCFAEB0066F46A /* AIService.swift */; };
+		78386EF62808C36400337987 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C0B3E27FCF71D0066F46A /* ContentView.swift */; };
+		78386EF72808C36400337987 /* fp22_countryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C0B3C27FCF71D0066F46A /* fp22_countryApp.swift */; };
+		78386EF82808C36F00337987 /* fp22_countryWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78386ECF2808BC2300337987 /* fp22_countryWidget.swift */; };
+		78386EF92808C37200337987 /* SimpleEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78386EDE2808BC4100337987 /* SimpleEntry.swift */; };
+		78386EFA2808C37500337987 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78386EE02808BC5800337987 /* Provider.swift */; };
+		78386EFC2808E6E800337987 /* SmallSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78386EFB2808E6E800337987 /* SmallSizeView.swift */; };
+		78386EFD2808E6E800337987 /* SmallSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78386EFB2808E6E800337987 /* SmallSizeView.swift */; };
+		78386EFF2808E6F400337987 /* LargeSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78386EFE2808E6F400337987 /* LargeSizeView.swift */; };
+		78386F002808E6F400337987 /* LargeSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78386EFE2808E6F400337987 /* LargeSizeView.swift */; };
+		78386F012808E83000337987 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C0B6D27FD3BCF0066F46A /* Keys.swift */; };
 		E18C0B3D27FCF71D0066F46A /* fp22_countryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C0B3C27FCF71D0066F46A /* fp22_countryApp.swift */; };
 		E18C0B3F27FCF71D0066F46A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C0B3E27FCF71D0066F46A /* ContentView.swift */; };
 		E18C0B4127FCF71F0066F46A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E18C0B4027FCF71F0066F46A /* Assets.xcassets */; };
@@ -33,6 +67,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		78386ED72808BC2500337987 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E18C0B3127FCF71D0066F46A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78386EC72808BC2300337987;
+			remoteInfo = "fp22-countryWidgetExtension";
+		};
 		E18C0B4A27FCF71F0066F46A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E18C0B3127FCF71D0066F46A /* Project object */;
@@ -49,7 +90,33 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		78386EDD2808BC2500337987 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				78386ED92808BC2500337987 /* fp22-countryWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		78386EC82808BC2300337987 /* fp22-countryWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "fp22-countryWidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78386ECA2808BC2300337987 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		78386ECC2808BC2300337987 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		78386ECF2808BC2300337987 /* fp22_countryWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fp22_countryWidget.swift; sourceTree = "<group>"; };
+		78386ED12808BC2300337987 /* fp22_countryWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = fp22_countryWidget.intentdefinition; sourceTree = "<group>"; };
+		78386ED22808BC2500337987 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		78386ED42808BC2500337987 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78386EDE2808BC4100337987 /* SimpleEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleEntry.swift; sourceTree = "<group>"; };
+		78386EE02808BC5800337987 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		78386EE22808BC9D00337987 /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
+		78386EFB2808E6E800337987 /* SmallSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallSizeView.swift; sourceTree = "<group>"; };
+		78386EFE2808E6F400337987 /* LargeSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeSizeView.swift; sourceTree = "<group>"; };
 		E18C0B3927FCF71D0066F46A /* fp22-country.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fp22-country.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18C0B3C27FCF71D0066F46A /* fp22_countryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fp22_countryApp.swift; sourceTree = "<group>"; };
 		E18C0B3E27FCF71D0066F46A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,6 +146,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		78386EC52808BC2300337987 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78386ECD2808BC2300337987 /* SwiftUI.framework in Frameworks */,
+				78386ECB2808BC2300337987 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E18C0B3627FCF71D0066F46A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -103,12 +179,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78386EC92808BC2300337987 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				78386ECA2808BC2300337987 /* WidgetKit.framework */,
+				78386ECC2808BC2300337987 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		78386ECE2808BC2300337987 /* fp22-countryWidget */ = {
+			isa = PBXGroup;
+			children = (
+				78386ECF2808BC2300337987 /* fp22_countryWidget.swift */,
+				78386ED12808BC2300337987 /* fp22_countryWidget.intentdefinition */,
+				78386ED22808BC2500337987 /* Assets.xcassets */,
+				78386ED42808BC2500337987 /* Info.plist */,
+				78386EDE2808BC4100337987 /* SimpleEntry.swift */,
+				78386EE02808BC5800337987 /* Provider.swift */,
+				78386EE22808BC9D00337987 /* WidgetView.swift */,
+				78386EFB2808E6E800337987 /* SmallSizeView.swift */,
+				78386EFE2808E6F400337987 /* LargeSizeView.swift */,
+			);
+			path = "fp22-countryWidget";
+			sourceTree = "<group>";
+		};
 		E18C0B3027FCF71D0066F46A = {
 			isa = PBXGroup;
 			children = (
 				E18C0B3B27FCF71D0066F46A /* fp22-country */,
 				E18C0B4C27FCF71F0066F46A /* fp22-countryTests */,
 				E18C0B5627FCF71F0066F46A /* fp22-countryUITests */,
+				78386ECE2808BC2300337987 /* fp22-countryWidget */,
+				78386EC92808BC2300337987 /* Frameworks */,
 				E18C0B3A27FCF71D0066F46A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -119,6 +222,7 @@
 				E18C0B3927FCF71D0066F46A /* fp22-country.app */,
 				E18C0B4927FCF71F0066F46A /* fp22-countryTests.xctest */,
 				E18C0B5327FCF71F0066F46A /* fp22-countryUITests.xctest */,
+				78386EC82808BC2300337987 /* fp22-countryWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -194,6 +298,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		78386EC72808BC2300337987 /* fp22-countryWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78386EDA2808BC2500337987 /* Build configuration list for PBXNativeTarget "fp22-countryWidgetExtension" */;
+			buildPhases = (
+				78386EC42808BC2300337987 /* Sources */,
+				78386EC52808BC2300337987 /* Frameworks */,
+				78386EC62808BC2300337987 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "fp22-countryWidgetExtension";
+			productName = "fp22-countryWidgetExtension";
+			productReference = 78386EC82808BC2300337987 /* fp22-countryWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		E18C0B3827FCF71D0066F46A /* fp22-country */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E18C0B5D27FCF71F0066F46A /* Build configuration list for PBXNativeTarget "fp22-country" */;
@@ -201,10 +322,12 @@
 				E18C0B3527FCF71D0066F46A /* Sources */,
 				E18C0B3627FCF71D0066F46A /* Frameworks */,
 				E18C0B3727FCF71D0066F46A /* Resources */,
+				78386EDD2808BC2500337987 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				78386ED82808BC2500337987 /* PBXTargetDependency */,
 			);
 			name = "fp22-country";
 			productName = "fp22-country";
@@ -254,9 +377,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1330;
+				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
+					78386EC72808BC2300337987 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
 					E18C0B3827FCF71D0066F46A = {
 						CreatedOnToolsVersion = 13.3;
 					};
@@ -286,11 +412,20 @@
 				E18C0B3827FCF71D0066F46A /* fp22-country */,
 				E18C0B4827FCF71F0066F46A /* fp22-countryTests */,
 				E18C0B5227FCF71F0066F46A /* fp22-countryUITests */,
+				78386EC72808BC2300337987 /* fp22-countryWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		78386EC62808BC2300337987 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78386ED32808BC2500337987 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E18C0B3727FCF71D0066F46A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -317,25 +452,62 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		78386EC42808BC2300337987 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78386EEA2808C35A00337987 /* WeatherViewModel.swift in Sources */,
+				78386F012808E83000337987 /* Keys.swift in Sources */,
+				78386EF22808C36200337987 /* AIStructs.swift in Sources */,
+				78386ED52808BC2500337987 /* fp22_countryWidget.intentdefinition in Sources */,
+				78386EF12808C36200337987 /* AIViewModel.swift in Sources */,
+				78386EE32808BC9D00337987 /* WidgetView.swift in Sources */,
+				78386EF52808C36200337987 /* AIService.swift in Sources */,
+				78386EEF2808C35A00337987 /* AsyncLocationManager.swift in Sources */,
+				78386EF62808C36400337987 /* ContentView.swift in Sources */,
+				78386EF92808C37200337987 /* SimpleEntry.swift in Sources */,
+				78386EF02808C35A00337987 /* FullDayWeatherView.swift in Sources */,
+				78386EF42808C36200337987 /* AIView.swift in Sources */,
+				78386F002808E6F400337987 /* LargeSizeView.swift in Sources */,
+				78386EF82808C36F00337987 /* fp22_countryWidget.swift in Sources */,
+				78386EEC2808C35A00337987 /* SummaryDayWeatherView.swift in Sources */,
+				78386EE82808C35A00337987 /* WeatherStructs.swift in Sources */,
+				78386EF72808C36400337987 /* fp22_countryApp.swift in Sources */,
+				78386EEB2808C35A00337987 /* WeatherService.swift in Sources */,
+				78386EFA2808C37500337987 /* Provider.swift in Sources */,
+				78386EFD2808E6E800337987 /* SmallSizeView.swift in Sources */,
+				78386EF32808C36200337987 /* AsyncAIService.swift in Sources */,
+				78386EED2808C35A00337987 /* WeatherUtils.swift in Sources */,
+				78386EEE2808C35A00337987 /* AsyncWeatherService.swift in Sources */,
+				78386EE92808C35A00337987 /* WeatherView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E18C0B3527FCF71D0066F46A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E1FE8355280796F0000AFAAD /* AIStructs.swift in Sources */,
 				E18C0B6A27FD00B10066F46A /* AIView.swift in Sources */,
+				78386EE52808BCA800337987 /* fp22_countryWidget.swift in Sources */,
 				E1FE835D28079C22000AFAAD /* AsyncLocationManager.swift in Sources */,
 				E18C0B7127FD3CCC0066F46A /* Keys.swift in Sources */,
 				E18C0B3F27FCF71D0066F46A /* ContentView.swift in Sources */,
 				E18C0B7C27FD45A30066F46A /* WeatherViewModel.swift in Sources */,
+				78386ED62808BC2500337987 /* fp22_countryWidget.intentdefinition in Sources */,
 				E1FE835728079702000AFAAD /* WeatherStructs.swift in Sources */,
+				78386EE42808BCA200337987 /* SimpleEntry.swift in Sources */,
 				E18C0B7A27FD45980066F46A /* WeatherView.swift in Sources */,
 				E18C0B6827FCFAEB0066F46A /* AIService.swift in Sources */,
 				E1FE835928079795000AFAAD /* AsyncAIService.swift in Sources */,
 				E1FE835F2807AC2A000AFAAD /* FullDayWeatherView.swift in Sources */,
 				E1FE83672807C221000AFAAD /* Utils.swift in Sources */,
+				78386EFF2808E6F400337987 /* LargeSizeView.swift in Sources */,
 				E1FE83652807BE60000AFAAD /* SummaryDayWeatherView.swift in Sources */,
 				E18C0B6C27FD33BC0066F46A /* AIViewModel.swift in Sources */,
+				78386EFC2808E6E800337987 /* SmallSizeView.swift in Sources */,
 				E18C0B3D27FCF71D0066F46A /* fp22_countryApp.swift in Sources */,
+				78386EE62808BCAD00337987 /* Provider.swift in Sources */,
 				E1FE835B28079B46000AFAAD /* AsyncWeatherService.swift in Sources */,
 				E1FE83632807BB3B000AFAAD /* WeatherUtils.swift in Sources */,
 				E18C0B7427FD3CEA0066F46A /* WeatherService.swift in Sources */,
@@ -362,6 +534,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		78386ED82808BC2500337987 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78386EC72808BC2300337987 /* fp22-countryWidgetExtension */;
+			targetProxy = 78386ED72808BC2500337987 /* PBXContainerItemProxy */;
+		};
 		E18C0B4B27FCF71F0066F46A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E18C0B3827FCF71D0066F46A /* fp22-country */;
@@ -375,6 +552,62 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		78386EDB2808BC2500337987 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "fp22-countryWidget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "fp22-countryWidget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "vincentorg.fp22-country.fp22-countryWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		78386EDC2808BC2500337987 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "fp22-countryWidget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "fp22-countryWidget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "vincentorg.fp22-country.fp22-countryWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		E18C0B5B27FCF71F0066F46A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -425,7 +658,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -479,7 +712,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -492,6 +725,7 @@
 		E18C0B5E27FCF71F0066F46A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -521,6 +755,7 @@
 		E18C0B5F27FCF71F0066F46A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -622,6 +857,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		78386EDA2808BC2500337987 /* Build configuration list for PBXNativeTarget "fp22-countryWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78386EDB2808BC2500337987 /* Debug */,
+				78386EDC2808BC2500337987 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E18C0B3427FCF71D0066F46A /* Build configuration list for PBXProject "fp22-country" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
