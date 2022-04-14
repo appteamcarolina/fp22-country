@@ -10,8 +10,8 @@ import CoreLocation
 
 
 // https://www.hackingwithswift.com/quick-start/concurrency/how-to-store-continuations-to-be-resumed-later
-@MainActor
-class AsyncLocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
+//@MainActor
+class AsyncLocationManager: NSObject, CLLocationManagerDelegate {
     var locationContinuation: CheckedContinuation<CLLocationCoordinate2D?, Error>?
     let manager = CLLocationManager()
 
@@ -25,7 +25,7 @@ class AsyncLocationManager: NSObject, ObservableObject, CLLocationManagerDelegat
 //        print("request")
         return try await withCheckedThrowingContinuation { continuation in
             locationContinuation = continuation
-//            manager.requestWhenInUseAuthorization()
+            manager.requestWhenInUseAuthorization()
             manager.requestLocation()
         }
     }

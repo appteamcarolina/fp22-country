@@ -8,15 +8,22 @@
 import Foundation
 
 public class WeatherViewModel: ObservableObject {
-    @Published var locationManager: AsyncLocationManager
+    var locationManager: AsyncLocationManager
     
     @Published var country = ""
     @Published var city = ""
     @Published var dailyForecasts: [DayForecast] = []
     
-    init() {
+    init(preview: Bool = false) {
         locationManager = AsyncLocationManager()
-        refresh()
+        if preview {
+            dailyForecasts = WeekForecast.example.daily
+            country = "United Kingdom"
+            city = "London"
+        }
+        else {
+            refresh()
+        }
     }
     
     public func refresh() {
@@ -38,6 +45,7 @@ public class WeatherViewModel: ObservableObject {
                 
             }
             catch {
+                print("Refesh error: ")
                 print(error.localizedDescription)
             }
         }
