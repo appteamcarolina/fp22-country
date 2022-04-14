@@ -26,7 +26,7 @@ struct AsyncWeatherService {
         })
         return geoLoc
     }
-    public static func requestWeather(forCoordinates coordinates: CLLocationCoordinate2D) async throws -> WeeklyForecastResponse{
+    public static func requestWeather(forCoordinates coordinates: CLLocationCoordinate2D) async throws -> WeekForecast{
         // Weather
         
         var components = URLComponents()
@@ -56,7 +56,7 @@ struct AsyncWeatherService {
         let (data, response) = try await URLSession.shared.data(for: request)
 //        print(String(decoding: data, as: UTF8.self))
         guard (response as? HTTPURLResponse)?.statusCode == 200 else { fatalError("Status code not 200") }
-        let decodedData = try JSONDecoder().decode(WeeklyForecastResponse.self, from: data)
+        let decodedData = try JSONDecoder().decode(WeekForecast.self, from: data)
         return decodedData
     }
 }

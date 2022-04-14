@@ -8,14 +8,15 @@
 import Foundation
 
 public class WeatherViewModel: ObservableObject {
-    let locationManager: AsyncLocationManager
+    @Published var locationManager: AsyncLocationManager
     
     @Published var country = ""
     @Published var city = ""
-    @Published var dailyForecasts: [DailyForecast] = []
+    @Published var dailyForecasts: [DayForecast] = []
     
     init() {
         locationManager = AsyncLocationManager()
+        refresh()
     }
     
     public func refresh() {

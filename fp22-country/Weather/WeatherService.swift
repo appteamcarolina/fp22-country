@@ -62,7 +62,7 @@ public final class WeatherService: NSObject {
             data, response, error in
             guard error == nil, let data = data else {return}
 //            print(String(decoding: data, as: UTF8.self))
-            if let response = try? JSONDecoder().decode(WeeklyForecastResponse.self, from: data) {
+            if let response = try? JSONDecoder().decode(WeekForecast.self, from: data) {
                 if let weatherCompletionHandler = self.weatherCompletionHandler {
                     weatherCompletionHandler(Weather(response: response))
                 }

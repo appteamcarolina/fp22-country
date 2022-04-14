@@ -13,59 +13,43 @@ struct WeatherView: View {
     
     var body: some View {
         
-        Form {
-            Section("Location"){
-                Text("Country: \(vm.country)")
-                Text("City: \(vm.city)")
-            }
-            Section("Weather") {
-                List {
-                    ForEach(vm.dailyForecasts, id: \.dt) {
-                        dailyForecast in
+        VStack {
+            VStack {
+                GroupBox {
+                    HStack {
                         VStack(alignment:.leading) {
-                            Text(formatDate(date:Date(timeIntervalSince1970: dailyForecast.dt)))
-                            Text("Sunrise: " + formatTime(date:Date(timeIntervalSince1970: dailyForecast.sunrise)))
-                            Text("Sunset: " + formatTime(date:Date(timeIntervalSince1970: dailyForecast.sunset)))
-
-                            
-                            
-                            Text(dailyForecast.weather.first?.main ?? "")
-                            Text("Temperature: \(dailyForecast.temp.day, specifier: "%.2f")°C")
+                            Text("Country: \(vm.country)")
+                            Text("City: \(vm.city)")
                         }
-                        
+                        Spacer()
                     }
+                    
+                } label: {
+                    Label("Location", systemImage: "location")
                 }
-            }
-            Section("Horizontal scroll") {
                 ScrollView (.horizontal, showsIndicators: false) {
                      HStack {
-                         //contents
+                         ForEach(vm.dailyForecasts, id: \.dt) {
+                             dailyForecast in
+                             NavigationLink {
+                                 FullDayWeatherView(dayWeather: dailyForecast)
+                             } label: {
+                                 SummaryDayWeatherView(dayWeather: dailyForecast)
+                                     .frame(width: 300)
+                                     .cornerRadius(10)
+                             }.buttonStyle(.plain)
+                             
+                         }
                      }
-                }.frame(height: 200)
-            }
-        }.onAppear {
-            vm.refresh()
+                }
+            }.navigationBarTitleDisplayMode(.inline)
         }
     }
-    // https://stackoverflow.com/questions/50712354/converting-utc-date-time-to-local-date-time-in-ios
-    func formatDate(date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.timeZone = TimeZone.current
-        dateFormatter.locale = Locale.current
-        dateFormatter.dateFormat = "M/d"
-        return dateFormatter.string(from: date)
-    }
-    func formatTime(date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.timeZone = TimeZone.current
-        dateFormatter.locale = Locale.current
-        dateFormatter.dateFormat = "hh:mm a"
-        return dateFormatter.string(from: date)
-    }
+    
 }
 
 struct WeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherView()
+        WeatherView().preferredColorScheme(.dark)
     }
 }

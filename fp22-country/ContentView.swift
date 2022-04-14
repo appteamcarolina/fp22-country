@@ -10,16 +10,16 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         
-        TabView {
-            WeatherView().tabItem {
-                Label("Debugging Weather View", systemImage: "cloud")
-            }
-            AIView().tabItem {
-                Label("Debugging AI View", systemImage: "ladybug")
+        NavigationView {
+            TabView {
+                WeatherView().tabItem {
+                    Label("Debugging Weather View", systemImage: "cloud")
+                }
+                AIView().tabItem {
+                    Label("Debugging AI View", systemImage: "ladybug")
+                }
             }
         }
-        
-        
     }
 }
 

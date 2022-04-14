@@ -10,8 +10,9 @@ import CoreLocation
 
 
 // https://www.hackingwithswift.com/quick-start/concurrency/how-to-store-continuations-to-be-resumed-later
-class AsyncLocationManager: NSObject, CLLocationManagerDelegate {
-    private var locationContinuation: CheckedContinuation<CLLocationCoordinate2D?, Error>?
+@MainActor
+class AsyncLocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
+    var locationContinuation: CheckedContinuation<CLLocationCoordinate2D?, Error>?
     let manager = CLLocationManager()
 
     override init() {
