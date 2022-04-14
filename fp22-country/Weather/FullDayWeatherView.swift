@@ -91,7 +91,9 @@ struct SunMoonView: View {
             LazyVGrid(columns: columns, spacing: 10) {
                 ForEach(0..<images.count, id: \.self) {
                     i in
-                    images[i].resizable().scaledToFit().frame(maxWidth:.infinity)
+                    images[i]
+//                        .resizable().scaledToFit().frame(maxWidth:.infinity)
+                        .font(.largeTitle)
                 }
                 // Cannot have repeating ids from other ForEachs
                 ForEach(images.count..<texts.count+images.count, id: \.self) {
@@ -139,7 +141,9 @@ struct FeelsLikeView: View {
             LazyVGrid(columns: columns, spacing: 10) {
                 ForEach(0..<images.count, id: \.self) {
                     i in
-                    images[i].resizable().scaledToFit().frame(maxWidth:.infinity)
+                    images[i]
+//                        .resizable().scaledToFit().frame(maxWidth:.infinity)
+                        .font(.largeTitle)
                 }
                 // Cannot have repeating ids from other ForEachs
                 ForEach(images.count..<texts.count+images.count, id: \.self) {
@@ -207,7 +211,9 @@ struct TemperatureView: View {
             LazyVGrid(columns: columns, spacing: 10) {
                 ForEach(0..<images.count, id: \.self) {
                     i in
-                    images[i].resizable().scaledToFit().frame(maxWidth:.infinity)
+                    images[i]
+//                        .resizable().scaledToFit().frame(maxWidth:.infinity)
+                        .font(.largeTitle)
                 }
                 // Cannot have repeating ids from other ForEachs
                 ForEach(images.count..<texts.count+images.count, id: \.self) {
