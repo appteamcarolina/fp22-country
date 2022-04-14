@@ -26,6 +26,7 @@
 		E1FE835928079795000AFAAD /* AsyncAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FE835828079795000AFAAD /* AsyncAIService.swift */; };
 		E1FE835B28079B46000AFAAD /* AsyncWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FE835A28079B46000AFAAD /* AsyncWeatherService.swift */; };
 		E1FE835D28079C22000AFAAD /* AsyncLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FE835C28079C22000AFAAD /* AsyncLocationManager.swift */; };
+		E1FE835F2807AC2A000AFAAD /* DayWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FE835E2807AC2A000AFAAD /* DayWeatherView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		E1FE835828079795000AFAAD /* AsyncAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAIService.swift; sourceTree = "<group>"; };
 		E1FE835A28079B46000AFAAD /* AsyncWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncWeatherService.swift; sourceTree = "<group>"; };
 		E1FE835C28079C22000AFAAD /* AsyncLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncLocationManager.swift; sourceTree = "<group>"; };
+		E1FE835E2807AC2A000AFAAD /* DayWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayWeatherView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				E18C0B7927FD45980066F46A /* WeatherView.swift */,
+				E1FE835E2807AC2A000AFAAD /* DayWeatherView.swift */,
 				E18C0B7B27FD45A30066F46A /* WeatherViewModel.swift */,
 				E1FE835A28079B46000AFAAD /* AsyncWeatherService.swift */,
 				E1FE835C28079C22000AFAAD /* AsyncLocationManager.swift */,
@@ -319,6 +322,7 @@
 				E18C0B7A27FD45980066F46A /* WeatherView.swift in Sources */,
 				E18C0B6827FCFAEB0066F46A /* AIService.swift in Sources */,
 				E1FE835928079795000AFAAD /* AsyncAIService.swift in Sources */,
+				E1FE835F2807AC2A000AFAAD /* DayWeatherView.swift in Sources */,
 				E18C0B6C27FD33BC0066F46A /* AIViewModel.swift in Sources */,
 				E18C0B3D27FCF71D0066F46A /* fp22_countryApp.swift in Sources */,
 				E1FE835B28079B46000AFAAD /* AsyncWeatherService.swift in Sources */,

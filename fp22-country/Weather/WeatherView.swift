@@ -36,6 +36,13 @@ struct WeatherView: View {
                     }
                 }
             }
+            Section("Horizontal scroll") {
+                ScrollView (.horizontal, showsIndicators: false) {
+                     HStack {
+                         //contents
+                     }
+                }.frame(height: 200)
+            }
         }.onAppear {
             vm.refresh()
         }
