@@ -13,15 +13,21 @@ class AIViewModel: ObservableObject {
     @Published var tokens = 50
     @Published var temp = 0.0
     
-    init() {
-        AIService.setDelegate(method: response)
-    }
-    func response (response: AIResponse) {
-        DispatchQueue.main.async {
-            self.output = response.choices[0].text
-        }
-    }
+
     func submit () {
-        AIService.sendRequest(prompt: text, temp: temp, tokens: tokens)
+//        AIService.sendRequest(prompt: text, temp: temp, tokens: tokens)
+        Task {
+            do {
+                let response = try await AsyncAIService.requestAIResponse(prompt: text, temp: temp, tokens: tokens)
+                
+                DispatchQueue.main.async {
+                    self.output = response.choices[0].text
+                }
+            }
+            catch {
+                print(error.localizedDescription)
+            }
+            
+        }
     }
 }

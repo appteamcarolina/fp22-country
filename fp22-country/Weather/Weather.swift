@@ -7,10 +7,4 @@
 
 import Foundation
 
-public struct Weather {
-    let response: WeeklyForecastResponse
-    
-    init (response: WeeklyForecastResponse) {
-        self.response = response
-    }
-}
+

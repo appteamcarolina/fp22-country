@@ -7,7 +7,4 @@
 
 import Foundation
 
-public struct Location {
-    let city: String
-    let country: String
-}
+

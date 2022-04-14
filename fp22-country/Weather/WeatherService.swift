@@ -8,6 +8,8 @@
 import CoreLocation
 import Foundation
 
+@available(*, deprecated, message: "Use AsyncWeatherService instead")
+
 public final class WeatherService: NSObject {
     private let locationManager = CLLocationManager()
     private var weatherCompletionHandler: ((Weather) -> Void)?
@@ -51,7 +53,7 @@ public final class WeatherService: NSObject {
         guard let urlString = "https://api.openweathermap.org/data/2.5/onecall?lat=\(coordinates.latitude)&lon=\(coordinates.longitude)&exclude=hourly,alerts,minutely,current&appid=\(Keys.WEATHER_API_KEY)&units=metric"
             .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else  {return}
         
-        print(urlString)
+//        print(urlString)
         guard let url = URL(string: urlString) else {return}
         
         
@@ -59,7 +61,7 @@ public final class WeatherService: NSObject {
         URLSession.shared.dataTask(with: url) {
             data, response, error in
             guard error == nil, let data = data else {return}
-            print(String(decoding: data, as: UTF8.self))
+//            print(String(decoding: data, as: UTF8.self))
             if let response = try? JSONDecoder().decode(WeeklyForecastResponse.self, from: data) {
                 if let weatherCompletionHandler = self.weatherCompletionHandler {
                     weatherCompletionHandler(Weather(response: response))
@@ -86,38 +88,5 @@ extension WeatherService: CLLocationManagerDelegate {
     }
 }
 
-struct WeeklyForecastResponse: Decodable {
-    let lat: Double
-    let lon: Double
-    let timezone: String
-    let daily: [DailyForecast]
-}
-struct DailyForecast: Decodable {
-    let dt: Double
-    let sunrise: Double
-    let sunset: Double
-    
-    let temp: TempForecast
-    
-//    let pressure: Int
-//    let humidity: Int
-//    let dew_point: Double
-    
-    let weather: [WeatherForecast]
-    
-//    let rain: Double
-//    let uvi: Double
-}
-struct TempForecast: Decodable {
-    let day: Double
-    let min: Double
-    let max: Double
-    let night: Double
-    let eve: Double
-    let morn: Double
-}
-struct WeatherForecast: Decodable {
-    let main: String
-    let description: String
-}
+
 

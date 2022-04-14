@@ -7,6 +7,7 @@
 
 import Foundation
 
+@available(*, deprecated, message: "Use AsyncAIService instead")
 struct AIService {
     private static var delegate: ((AIResponse) -> Void)?
     
@@ -54,13 +55,4 @@ struct AIService {
     }
 }
 
-struct AIResponse: Decodable {
-    let id: String
-    let object: String
-    let created: Int
-    let model: String
-    let choices: [Choices]
-}
-struct Choices: Decodable {
-    let text: String
-}
+
