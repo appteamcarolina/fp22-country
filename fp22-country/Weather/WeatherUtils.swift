@@ -36,7 +36,7 @@ public struct WeatherUtils {
     
     
     static var cloudGradient: LinearGradient {
-        LinearGradient(colors: [.gray, .blue],
+        LinearGradient(colors: [.gray, .white, .blue],
                        startPoint: .top,
                        endPoint: .bottom)
     }
@@ -46,7 +46,7 @@ public struct WeatherUtils {
                        endPoint: .bottom)
     }
     static var snowGradient: LinearGradient {
-        LinearGradient(colors: [.teal, .blue, .white],
+        LinearGradient(colors: [.white, .teal, .blue],
                        startPoint: .top,
                        endPoint: .bottom)
     }
@@ -61,7 +61,7 @@ public struct WeatherUtils {
                        endPoint: .bottom)
     }
     static var drizzleGradient: LinearGradient {
-        LinearGradient(colors: [.gray, .blue],
+        LinearGradient(colors: [.gray, .teal, .blue],
                        startPoint: .top,
                        endPoint: .bottom)
     }
@@ -101,4 +101,14 @@ public struct WeatherUtils {
     }
 }
 
-
+struct TransparentGroupBox: GroupBoxStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        VStack {
+            configuration.content
+        }
+        .padding([.trailing, .leading, .bottom])
+        .padding(.top, 50)
+        .background(RoundedRectangle(cornerRadius: 8).fill(.ultraThinMaterial))
+        .overlay(configuration.label.padding([.leading, .top], 15).font(.headline), alignment: .topLeading)
+    }
+}

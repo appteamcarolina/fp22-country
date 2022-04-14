@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    let preview: Bool
+    
+    init(preview: Bool = false) {
+        self.preview = preview
+    }
+    
     var body: some View {
-        
         NavigationView {
             TabView {
-                WeatherView().tabItem {
+                WeatherView(preview: preview).tabItem {
                     Label("Debugging Weather View", systemImage: "cloud")
                 }
                 AIView().tabItem {
@@ -25,6 +30,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(preview: true).preferredColorScheme(.dark)
     }
 }

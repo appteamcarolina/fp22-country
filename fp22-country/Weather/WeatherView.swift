@@ -9,47 +9,51 @@ import SwiftUI
 
 struct WeatherView: View {
     
-    @StateObject var vm = WeatherViewModel()
+    @StateObject var vm: WeatherViewModel
+    
+    
+    init(preview: Bool = false) {
+        _vm = StateObject<WeatherViewModel>(wrappedValue: WeatherViewModel(preview: preview))
+    }
     
     var body: some View {
-        
         VStack {
-            VStack {
-                GroupBox {
-                    HStack {
-                        VStack(alignment:.leading) {
-                            Text("Country: \(vm.country)")
-                            Text("City: \(vm.city)")
-                        }
-                        Spacer()
+            GroupBox {
+                HStack {
+                    VStack(alignment:.leading) {
+                        Text("Country: \(vm.country)")
+                        Text("City: \(vm.city)")
                     }
-                    
-                } label: {
-                    Label("Location", systemImage: "location")
+                    Spacer()
                 }
-                ScrollView (.horizontal, showsIndicators: false) {
-                     HStack {
-                         ForEach(vm.dailyForecasts, id: \.dt) {
-                             dailyForecast in
-                             NavigationLink {
-                                 FullDayWeatherView(dayWeather: dailyForecast)
-                             } label: {
-                                 SummaryDayWeatherView(dayWeather: dailyForecast)
-                                     .frame(width: 300)
-                                     .cornerRadius(10)
-                             }.buttonStyle(.plain)
-                             
-                         }
+                
+            } label: {
+                Label("Location", systemImage: "location")
+            }
+            ScrollView (.horizontal, showsIndicators: false) {
+                 HStack {
+                     ForEach(vm.dailyForecasts, id: \.dt) {
+                         dailyForecast in
+                         NavigationLink {
+                             FullDayWeatherView(dayWeather: dailyForecast)
+                         } label: {
+                             SummaryDayWeatherView(dayWeather: dailyForecast)
+                                 .frame(width: 300)
+                                 .cornerRadius(10)
+                         }.buttonStyle(.plain)
+                         
                      }
-                }
-            }.navigationBarTitleDisplayMode(.inline)
-        }
+                 }
+            }
+        }.navigationBarHidden(true)
     }
     
 }
 
 struct WeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherView().preferredColorScheme(.dark)
+        NavigationView {
+            WeatherView(preview: true).preferredColorScheme(.dark)
+        }
     }
 }
