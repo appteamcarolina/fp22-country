@@ -12,6 +12,7 @@
 		782821BE280E0387002645E9 /* WidgetWeatherStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782821BA280DFF2E002645E9 /* WidgetWeatherStore.swift */; };
 		782821BF280E038B002645E9 /* WidgetAIStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782821BC280E015B002645E9 /* WidgetAIStore.swift */; };
 		782821C2280E0563002645E9 /* WeatherStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FE835628079702000AFAAD /* WeatherStructs.swift */; };
+		782821C4280E0D80002645E9 /* MediumSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782821C3280E0D80002645E9 /* MediumSizeView.swift */; };
 		78386ECB2808BC2300337987 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78386ECA2808BC2300337987 /* WidgetKit.framework */; };
 		78386ECD2808BC2300337987 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78386ECC2808BC2300337987 /* SwiftUI.framework */; };
 		78386ED32808BC2500337987 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78386ED22808BC2500337987 /* Assets.xcassets */; };
@@ -22,7 +23,6 @@
 		78386EF92808C37200337987 /* SimpleEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78386EDE2808BC4100337987 /* SimpleEntry.swift */; };
 		78386EFA2808C37500337987 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78386EE02808BC5800337987 /* Provider.swift */; };
 		78386EFD2808E6E800337987 /* SmallSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78386EFB2808E6E800337987 /* SmallSizeView.swift */; };
-		78386F002808E6F400337987 /* LargeSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78386EFE2808E6F400337987 /* LargeSizeView.swift */; };
 		E18C0B3D27FCF71D0066F46A /* fp22_countryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C0B3C27FCF71D0066F46A /* fp22_countryApp.swift */; };
 		E18C0B3F27FCF71D0066F46A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C0B3E27FCF71D0066F46A /* ContentView.swift */; };
 		E18C0B4127FCF71F0066F46A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E18C0B4027FCF71F0066F46A /* Assets.xcassets */; };
@@ -89,6 +89,7 @@
 /* Begin PBXFileReference section */
 		782821BA280DFF2E002645E9 /* WidgetWeatherStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetWeatherStore.swift; sourceTree = "<group>"; };
 		782821BC280E015B002645E9 /* WidgetAIStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetAIStore.swift; sourceTree = "<group>"; };
+		782821C3280E0D80002645E9 /* MediumSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumSizeView.swift; sourceTree = "<group>"; };
 		782C73A9280C417300256913 /* fp22-country.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "fp22-country.entitlements"; sourceTree = "<group>"; };
 		782C73AA280C41A400256913 /* fp22-countryWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "fp22-countryWidgetExtension.entitlements"; sourceTree = "<group>"; };
 		78386EC82808BC2300337987 /* fp22-countryWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "fp22-countryWidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,7 +103,6 @@
 		78386EE02808BC5800337987 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		78386EE22808BC9D00337987 /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
 		78386EFB2808E6E800337987 /* SmallSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallSizeView.swift; sourceTree = "<group>"; };
-		78386EFE2808E6F400337987 /* LargeSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeSizeView.swift; sourceTree = "<group>"; };
 		E18C0B3927FCF71D0066F46A /* fp22-country.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fp22-country.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18C0B3C27FCF71D0066F46A /* fp22_countryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fp22_countryApp.swift; sourceTree = "<group>"; };
 		E18C0B3E27FCF71D0066F46A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -185,7 +185,7 @@
 				78386EE02808BC5800337987 /* Provider.swift */,
 				78386EE22808BC9D00337987 /* WidgetView.swift */,
 				78386EFB2808E6E800337987 /* SmallSizeView.swift */,
-				78386EFE2808E6F400337987 /* LargeSizeView.swift */,
+				782821C3280E0D80002645E9 /* MediumSizeView.swift */,
 			);
 			path = "fp22-countryWidget";
 			sourceTree = "<group>";
@@ -448,9 +448,9 @@
 			files = (
 				78386ED52808BC2500337987 /* fp22_countryWidget.intentdefinition in Sources */,
 				78386EE32808BC9D00337987 /* WidgetView.swift in Sources */,
+				782821C4280E0D80002645E9 /* MediumSizeView.swift in Sources */,
 				78386EF92808C37200337987 /* SimpleEntry.swift in Sources */,
 				782821BF280E038B002645E9 /* WidgetAIStore.swift in Sources */,
-				78386F002808E6F400337987 /* LargeSizeView.swift in Sources */,
 				782821BE280E0387002645E9 /* WidgetWeatherStore.swift in Sources */,
 				782821C2280E0563002645E9 /* WeatherStructs.swift in Sources */,
 				78386EF82808C36F00337987 /* fp22_countryWidget.swift in Sources */,
@@ -531,9 +531,9 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_ENTITLEMENTS = "fp22-countryWidgetExtension.entitlements";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9MGZRA2JV4;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "fp22-countryWidget/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "fp22-countryWidget";
@@ -547,6 +547,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "vincentorg.fp22-country.fp22-countryWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -561,9 +562,9 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_ENTITLEMENTS = "fp22-countryWidgetExtension.entitlements";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9MGZRA2JV4;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "fp22-countryWidget/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "fp22-countryWidget";
@@ -577,6 +578,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "vincentorg.fp22-country.fp22-countryWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -705,10 +707,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "fp22-country/fp22-country.entitlements";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"fp22-country/Preview Content\"";
-				DEVELOPMENT_TEAM = 9MGZRA2JV4;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location for weather data.";
@@ -724,6 +726,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "vincentorg.fp22-country";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -737,10 +740,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "fp22-country/fp22-country.entitlements";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"fp22-country/Preview Content\"";
-				DEVELOPMENT_TEAM = 9MGZRA2JV4;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location for weather data.";
@@ -756,6 +759,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "vincentorg.fp22-country";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

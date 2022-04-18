@@ -20,7 +20,7 @@ struct WidgetView: View {
         case .systemSmall:
             SmallSizeView(entry: entry)
         case .systemLarge:
-            LargeSizeView(entry: entry)
+            MediumSizeView(entry: entry)
         default:
             Text("Not Implemented Here")
         }

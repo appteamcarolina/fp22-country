@@ -19,7 +19,7 @@ struct WidgetWeatherStore {
     }
     
     static func fetchCity() -> String {
-        UserDefaults.standard.string(forKey: "city") ?? ""
+        UserDefaults.standard.string(forKey: "city") ?? "Chapel Hill"
     }
     static func fetchCountry() -> String {
         UserDefaults.standard.string(forKey: "country") ?? ""

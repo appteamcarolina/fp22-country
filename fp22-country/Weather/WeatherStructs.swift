@@ -102,7 +102,7 @@ struct TempForecast: Codable {
 }
 extension TempForecast {
     static func placeholder() -> TempForecast {
-        TempForecast(day: 0.0, min: 0.0, max: 0.0, night: 0.0, eve: 0.0, morn: 0.0)
+        TempForecast(day: 1.0, min: 0.0, max: 0.0, night: 2.0, eve: 3.0, morn: 0.0)
     }
 }
 struct WeatherForecast: Decodable {
