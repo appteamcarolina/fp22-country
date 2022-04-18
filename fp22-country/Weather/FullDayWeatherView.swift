@@ -46,7 +46,7 @@ struct FullDayWeatherView: View {
         .padding([.bottom, .leading, .trailing])
         .padding(.top, 50)
         .ignoresSafeArea()
-       // .fullscreenBackground(WeatherUtils.gradientMap[dayWeather.weather.first?.main ?? "N/A"] ?? WeatherUtils.clearGradient)
+        .fullscreenBackground(WeatherUtils.gradientMap[dayWeather.weather.first?.main ?? "N/A"] ?? WeatherUtils.clearGradient)
     }
     
 
