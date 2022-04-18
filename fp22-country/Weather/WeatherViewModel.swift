@@ -10,9 +10,14 @@ import Foundation
 public class WeatherViewModel: ObservableObject {
     var locationManager: AsyncLocationManager
     
-    @Published var country = ""
-    @Published var city = ""
-    @Published var dailyForecasts: [DayForecast] = []
+    //@Published var country = ""
+   // @Published var city = ""
+   // @Published var dailyForecasts: [DayForecast] = []
+    
+    
+    @Published private(set) var country = WidgetWeatherStore.fetchCountry()
+    @Published private(set) var city = WidgetWeatherStore.fetchCity()
+    @Published private(set) var dailyForecasts: [DayForecast] = []
     
     init(preview: Bool = false) {
         locationManager = AsyncLocationManager()
@@ -36,11 +41,13 @@ public class WeatherViewModel: ObservableObject {
                 }
                 let location = await AsyncWeatherService.requestGeoLoc(forCoordinates: coordinates)
                 let weather = try await AsyncWeatherService.requestWeather(forCoordinates: coordinates)
+     
                 
                 DispatchQueue.main.async {
                     self.country = location.country
                     self.city = location.city
                     self.dailyForecasts = weather.daily
+                    WidgetWeatherStore.save(city: self.city, country: self.country, tempForecasts: self.dailyForecasts[0].temp)
                 }
                 
             }

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct LargeSizeView: View {
     var entry: SimpleEntry
     var body: some View {

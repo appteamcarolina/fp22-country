@@ -8,9 +8,10 @@
 import Foundation
 import WidgetKit
 
+
 struct SimpleEntry: TimelineEntry {
     let date: Date
     let location: Location
     let weather: TempForecast
-    let ai: Choices
+    let ai: String
 }

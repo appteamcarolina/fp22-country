@@ -8,6 +8,7 @@
 import WidgetKit
 import SwiftUI
 
+
 @main
 struct fp22_countryWidget: Widget {
     let kind: String = "fp22_countryWidget"
@@ -24,7 +25,7 @@ struct fp22_countryWidget: Widget {
 
 struct fp22_countryWidget_Previews: PreviewProvider {
     static var previews: some View {
-        WidgetView(entry: SimpleEntry(date: Date(), location: .placeHolder(), weather: .placeholder(), ai: .placeholder()))
+        WidgetView(entry: SimpleEntry(date: Date(), location: .placeHolder(), weather: .placeholder(), ai: ""))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
