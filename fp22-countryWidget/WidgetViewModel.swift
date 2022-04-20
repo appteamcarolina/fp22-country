@@ -52,7 +52,7 @@ public class WidgetViewModel: ObservableObject {
     
     // remove all punctuation chars from string and return an array of the sentence split up by words
     private func parseInput(entry: SimpleEntry) -> Array<String> {
-        let testString = "A jacket and pants."
+        let testString = "A jacket."
         var stringWithout = testString.replacingOccurrences(of: ".", with: "")
         stringWithout = stringWithout.replacingOccurrences(of: ",", with: "")
         stringWithout = stringWithout.replacingOccurrences(of: "!", with: "")
@@ -74,7 +74,7 @@ public class WidgetViewModel: ObservableObject {
                 returnArray.append(newEmoji)
             }
         }
-        if returnArray.count < 2 {
+        if returnArray.count < 1 {
             let newEmoji: String? = aiToEmojiMap[backUpWeather(entry: entry)]
             if !returnArray.contains(newEmoji) {
                 returnArray.append(newEmoji)

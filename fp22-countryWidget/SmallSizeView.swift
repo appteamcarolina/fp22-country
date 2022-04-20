@@ -33,10 +33,16 @@ struct SmallSizeView: View {
                     }
                 }
                 VStack{
-                    Text(clothesEmojiMap[0] ?? "")
-                        .font(.system(size: 50))
-                    Text(clothesEmojiMap[1] ?? "")
-                        .font(.system(size: 50))
+                    if(clothesEmojiMap.count == 2){
+                        Text(clothesEmojiMap[0] ?? "")
+                            .font(.system(size: 50))
+                        Text(clothesEmojiMap[1] ?? "")
+                            .font(.system(size: 50))
+                    }
+                    else{
+                        Text(clothesEmojiMap[0] ?? "")
+                            .font(.system(size: 50))
+                    }
                     }
                 }
             }
