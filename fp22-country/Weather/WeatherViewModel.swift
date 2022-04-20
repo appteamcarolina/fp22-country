@@ -47,7 +47,7 @@ public class WeatherViewModel: ObservableObject {
                     self.country = location.country
                     self.city = location.city
                     self.dailyForecasts = weather.daily
-                    WidgetWeatherStore.save(city: self.city, country: self.country, tempForecasts: self.dailyForecasts[0].temp)
+                    WidgetWeatherStore.save(city: self.city, country: self.country, tempForecasts: self.dailyForecasts[0].temp, sky: self.dailyForecasts[0].weather[0])
                 }
                 
             }

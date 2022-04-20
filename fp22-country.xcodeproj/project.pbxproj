@@ -23,6 +23,8 @@
 		78386EF92808C37200337987 /* SimpleEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78386EDE2808BC4100337987 /* SimpleEntry.swift */; };
 		78386EFA2808C37500337987 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78386EE02808BC5800337987 /* Provider.swift */; };
 		78386EFD2808E6E800337987 /* SmallSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78386EFB2808E6E800337987 /* SmallSizeView.swift */; };
+		78A6FA68280F60FE0036433D /* WidgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A6FA67280F60FE0036433D /* WidgetViewModel.swift */; };
+		78A6FA69280F66680036433D /* WeatherUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FE83622807BB3B000AFAAD /* WeatherUtils.swift */; };
 		E18C0B3D27FCF71D0066F46A /* fp22_countryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C0B3C27FCF71D0066F46A /* fp22_countryApp.swift */; };
 		E18C0B3F27FCF71D0066F46A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C0B3E27FCF71D0066F46A /* ContentView.swift */; };
 		E18C0B4127FCF71F0066F46A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E18C0B4027FCF71F0066F46A /* Assets.xcassets */; };
@@ -103,6 +105,7 @@
 		78386EE02808BC5800337987 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		78386EE22808BC9D00337987 /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
 		78386EFB2808E6E800337987 /* SmallSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallSizeView.swift; sourceTree = "<group>"; };
+		78A6FA67280F60FE0036433D /* WidgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetViewModel.swift; sourceTree = "<group>"; };
 		E18C0B3927FCF71D0066F46A /* fp22-country.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fp22-country.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18C0B3C27FCF71D0066F46A /* fp22_countryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fp22_countryApp.swift; sourceTree = "<group>"; };
 		E18C0B3E27FCF71D0066F46A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -186,6 +189,7 @@
 				78386EE22808BC9D00337987 /* WidgetView.swift */,
 				78386EFB2808E6E800337987 /* SmallSizeView.swift */,
 				782821C3280E0D80002645E9 /* MediumSizeView.swift */,
+				78A6FA67280F60FE0036433D /* WidgetViewModel.swift */,
 			);
 			path = "fp22-countryWidget";
 			sourceTree = "<group>";
@@ -446,7 +450,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78A6FA68280F60FE0036433D /* WidgetViewModel.swift in Sources */,
 				78386ED52808BC2500337987 /* fp22_countryWidget.intentdefinition in Sources */,
+				78A6FA69280F66680036433D /* WeatherUtils.swift in Sources */,
 				78386EE32808BC9D00337987 /* WidgetView.swift in Sources */,
 				782821C4280E0D80002645E9 /* MediumSizeView.swift in Sources */,
 				78386EF92808C37200337987 /* SimpleEntry.swift in Sources */,
@@ -531,6 +537,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_ENTITLEMENTS = "fp22-countryWidgetExtension.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
@@ -707,6 +714,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "fp22-country/fp22-country.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"fp22-country/Preview Content\"";
@@ -740,6 +748,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "fp22-country/fp22-country.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"fp22-country/Preview Content\"";

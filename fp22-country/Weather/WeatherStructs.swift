@@ -102,16 +102,16 @@ struct TempForecast: Codable {
 }
 extension TempForecast {
     static func placeholder() -> TempForecast {
-        TempForecast(day: 1.0, min: 0.0, max: 0.0, night: 2.0, eve: 3.0, morn: 0.0)
+        TempForecast(day: 70.0, min: 70.0, max: 70.0, night: 70.0, eve: 70.0, morn: 70.0)
     }
 }
-struct WeatherForecast: Decodable {
+struct WeatherForecast: Codable {
     let main: String
     let description: String
 }
 
 extension WeatherForecast {
     static func placeholder() -> WeatherForecast {
-        WeatherForecast(main: "Sunny", description: "Sunny")
+        WeatherForecast(main: "Drizzle", description: "Drizzle")
     }
 }

@@ -13,5 +13,6 @@ struct SimpleEntry: TimelineEntry {
     let date: Date
     let location: Location
     let weather: TempForecast
+    let sky: WeatherForecast
     let ai: String
 }

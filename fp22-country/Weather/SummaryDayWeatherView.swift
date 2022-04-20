@@ -67,7 +67,7 @@ struct SummaryDayWeatherView: View {
 //                Label("Temperature", systemImage: "thermometer")
 //            }.groupBoxStyle(TransparentGroupBox())
             
-        }//.padding().fullscreenBackground(WeatherUtils.gradientMap[dayWeather.weather.first?.main ?? "N/A"] ?? WeatherUtils.clearGradient)
+        }.padding().fullscreenBackground(WeatherUtils.gradientMap[dayWeather.weather.first?.main ?? "N/A"] ?? WeatherUtils.clearGradient)
     }
 }
 

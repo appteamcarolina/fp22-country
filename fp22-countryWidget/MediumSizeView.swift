@@ -11,6 +11,7 @@ import SwiftUI
 
 struct MediumSizeView: View {
     var entry: SimpleEntry
+    var vm = WidgetViewModel()
     var body: some View {
         Text("Hello, World!")
     }

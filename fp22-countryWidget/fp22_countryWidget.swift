@@ -17,7 +17,7 @@ struct fp22_countryWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             WidgetView(entry: entry)
         }
-        .supportedFamilies([.systemSmall, .systemLarge])
+        .supportedFamilies([.systemSmall])
         .configurationDisplayName("fp22-country")
         .description("See what you should wear for the day")
     }
@@ -25,7 +25,7 @@ struct fp22_countryWidget: Widget {
 
 struct fp22_countryWidget_Previews: PreviewProvider {
     static var previews: some View {
-        WidgetView(entry: SimpleEntry(date: Date(), location: .placeHolder(), weather: .placeholder(), ai: ""))
+        WidgetView(entry: SimpleEntry(date: Date(), location: .placeHolder(), weather: .placeholder(), sky: .placeholder(), ai: "You should wear a light jacket or sweater"))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

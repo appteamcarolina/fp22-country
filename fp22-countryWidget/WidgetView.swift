@@ -14,13 +14,10 @@ struct WidgetView: View {
     @Environment(\.widgetFamily) var widgetFamily
     
     var entry: Provider.Entry
-
     var body: some View {
         switch widgetFamily {
         case .systemSmall:
             SmallSizeView(entry: entry)
-        case .systemLarge:
-            MediumSizeView(entry: entry)
         default:
             Text("Not Implemented Here")
         }
