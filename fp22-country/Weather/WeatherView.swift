@@ -40,17 +40,35 @@ struct WeatherView: View {
                              FullDayWeatherView(dayWeather: dailyForecast)
                          } label: {
                              SummaryDayWeatherView(dayWeather: dailyForecast, city: vm.city)
-                                 .frame(width:390)
+                             .frame(maxHeight:.infinity)
+                             .frame(width: geometry.size.width)
                                 // .cornerRadius(10)
                          }
                          .buttonStyle(.plain)
-
                      }
                  }
-                 .frame(maxHeight:.infinity)
+                 
             }
-            .ignoresSafeArea()
+            .overlay(alignment:.topTrailing) {
+                HStack(spacing: 15) {
+                    NavigationLink {
+                        AIView()
+                    } label: {
+                        Image(systemName: "brain")
+                    }.buttonStyle(.plain)
+                    NavigationLink {
+                        SettingsView()
+                    } label: {
+                        Image(systemName: "gear")
+                    }.buttonStyle(.plain)
+                }
+                .font(.title)
+                .padding(.top, 30)
+                .padding()
+            }
+//            .ignoresSafeArea()
         }
+        .ignoresSafeArea()
     }
     
 }
@@ -60,6 +78,6 @@ struct WeatherView_Previews: PreviewProvider {
         NavigationView {
             WeatherView(preview: true).preferredColorScheme(.dark).navigationBarHidden(true)
         }
-        .previewInterfaceOrientation(.landscapeLeft)
+        .previewInterfaceOrientation(.portrait)
     }
 }
