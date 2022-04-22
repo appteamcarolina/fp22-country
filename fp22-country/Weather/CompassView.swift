@@ -20,12 +20,13 @@ struct CompassView: View {
                 .padding(.bottom)
             ZStack {
                 VStack {
+                    Text("Wind").rotationEffect(windTextAngle())
                     Capsule()
                         .frame(width: 5,
                                 height: 25)
                         .foregroundColor(Color.blue)
-                        .padding(.bottom, 360)
-                    Text("Wind").rotationEffect(windTextAngle())
+                        .padding(.bottom)
+                        .padding(.bottom, 200)
                 }.rotationEffect(Angle(degrees: windHeading))
                 ForEach(Marker.markers(), id: \.self) { marker in
                     CompassMarkerView(marker: marker,
