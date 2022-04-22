@@ -36,7 +36,9 @@ struct AIAppView: View {
                 } label: {
                     RoundedRectangle(cornerSize: CGSize(width: 5, height: 5)).strokeBorder( lineWidth:2).overlay(alignment: .center) {
                         Label("Get suggestion", systemImage: "gear")
-                    }.frame(maxWidth: .infinity).frame(height: 40)
+                    }
+                    .contentShape(RoundedRectangle(cornerSize: CGSize(width: 5, height: 5)))
+                    .frame(maxWidth: .infinity).frame(height: 40)
                 }.buttonStyle(.plain)
             }
         }
