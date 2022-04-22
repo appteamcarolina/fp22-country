@@ -66,12 +66,19 @@ struct WeatherView: View {
             }
             .tabViewStyle(.page)
             .overlay(alignment:.topTrailing) {
-                NavigationLink {
-                    AIView()
-                } label: {
-                    Image(systemName: "brain")
+                HStack(spacing: 15) {
+                    NavigationLink {
+                        AIView()
+                    } label: {
+                        Image(systemName: "brain")
+                    }.buttonStyle(.plain)
+                    NavigationLink {
+                        SettingsView()
+                    } label: {
+                        Image(systemName: "gear")
+                    }.buttonStyle(.plain)
                 }
-                .buttonStyle(.plain)
+                .font(.title)
                 .padding(.top, 60)
                 .padding()
             }

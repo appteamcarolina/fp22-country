@@ -21,10 +21,10 @@ struct Provider: TimelineProvider {
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> ()) {
     
-        let location = Location(city: WidgetWeatherStore.fetchCity(), country: WidgetWeatherStore.fetchCountry())
-        let todayWeather = WidgetWeatherStore.fetchForecast()
-        let sky = WidgetWeatherStore.fetchSky()
-        let entry = SimpleEntry(date: Date(), location: location, weather: todayWeather, sky: sky, ai: WidgetAIStore.fetchChoices())
+        let location = Location(city: WeatherStore.fetchCity(), country: WeatherStore.fetchCountry())
+        let todayWeather = WeatherStore.fetchForecast()
+        let sky = WeatherStore.fetchSky()
+        let entry = SimpleEntry(date: Date(), location: location, weather: todayWeather, sky: sky, ai: AIStore.fetchChoices())
         let timeline = Timeline(entries: [entry], policy: .after(.now.advanced(by: 60 * 60 * 30)))
         completion(timeline)
     }

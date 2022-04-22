@@ -10,8 +10,8 @@ import SwiftUI
 
 class AIAppViewModel: ObservableObject {
     @Published private(set) var output = ""
-    @Published var tokens = 50
-    @Published var temp = 0.1
+    @Published var tokens = AIStore.fetchTokens()
+    @Published var temp = AIStore.fetchTemp()
     @Published var dayWeather: DayForecast
     
     @Published var prompt: String
@@ -45,7 +45,7 @@ class AIAppViewModel: ObservableObject {
                     if Calendar.current.isDate(.now, inSameDayAs:Date(timeIntervalSince1970: self.dayWeather.dt))  {
                         // Only store current date for widget
                         print("Today is \(Date(timeIntervalSince1970: self.dayWeather.dt).formatted(date: .abbreviated, time: .omitted))")
-                        WidgetAIStore.save(choices: self.output)
+                        AIStore.save(choices: self.output)
                     }
                 }
             }

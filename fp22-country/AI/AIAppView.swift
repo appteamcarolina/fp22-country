@@ -25,12 +25,10 @@ struct AIAppView: View {
                 if (vm.received) {
                     Text("A: ").bold() + Text(vm.output)
                 }
-                else {
+                else if (vm.inProgress) {
                     HStack {
                         Text("A: ").bold()
-                        if (vm.inProgress) {
-                            ProgressView()
-                        }
+                        ProgressView()
                     }
                 }
                 Button {

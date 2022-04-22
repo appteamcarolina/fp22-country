@@ -9,7 +9,7 @@ import Foundation
 
 class AIViewModel: ObservableObject {
     @Published var text = ""
-    @Published private(set) var output = WidgetAIStore.fetchChoices()
+    @Published private(set) var output = ""
     @Published var tokens = 50
     @Published var temp = 0.0
     
@@ -22,7 +22,7 @@ class AIViewModel: ObservableObject {
                 
                 DispatchQueue.main.async {
                     self.output = response.choices[0].text
-                    WidgetAIStore.save(choices: self.output)
+                    AIStore.save(choices: self.output)
                 }
             }
             catch {

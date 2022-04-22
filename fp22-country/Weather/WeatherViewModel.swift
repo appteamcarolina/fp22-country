@@ -15,8 +15,8 @@ public class WeatherViewModel: ObservableObject {
    // @Published var dailyForecasts: [DayForecast] = []
     
     
-    @Published private(set) var country = WidgetWeatherStore.fetchCountry()
-    @Published private(set) var city = WidgetWeatherStore.fetchCity()
+    @Published private(set) var country = WeatherStore.fetchCountry()
+    @Published private(set) var city = WeatherStore.fetchCity()
     @Published private(set) var dailyForecasts: [DayForecast] = []
     
     init(preview: Bool = false) {
@@ -27,9 +27,9 @@ public class WeatherViewModel: ObservableObject {
             city = "London"
         }
         else {
-            city = WidgetWeatherStore.fetchCity()
-            country = WidgetWeatherStore.fetchCountry()
-            if let weekForecast = WidgetWeatherStore.fetchWeekForecast() {
+            city = WeatherStore.fetchCity()
+            country = WeatherStore.fetchCountry()
+            if let weekForecast = WeatherStore.fetchWeekForecast() {
                 dailyForecasts = weekForecast.daily
             }
             
@@ -54,7 +54,7 @@ public class WeatherViewModel: ObservableObject {
                     self.country = location.country
                     self.city = location.city
                     self.dailyForecasts = weekForecast.daily
-                    WidgetWeatherStore.save(city: self.city, country: self.country, weekForecast: weekForecast, tempForecasts: self.dailyForecasts[0].temp, sky: self.dailyForecasts[0].weather[0])
+                    WeatherStore.save(city: self.city, country: self.country, weekForecast: weekForecast, tempForecasts: self.dailyForecasts[0].temp, sky: self.dailyForecasts[0].weather[0])
                 }
                 
             }

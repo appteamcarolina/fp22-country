@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct WidgetWeatherStore {
+struct WeatherStore {
     static let userDefaults = UserDefaults(suiteName: "group.com.fp22-country.contents")!
     
     static func save(city: String, country: String, weekForecast: WeekForecast, tempForecasts: TempForecast, sky: WeatherForecast) -> Void{
