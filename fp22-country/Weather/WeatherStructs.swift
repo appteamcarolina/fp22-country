@@ -27,7 +27,7 @@ public struct Weather {
     }
 }
 // JSON Response
-struct WeekForecast: Decodable {
+struct WeekForecast: Codable {
     let lat: Double
     let lon: Double
     let timezone: String
@@ -50,7 +50,7 @@ extension WeekForecast {
         return decoded!
     }
 }
-struct DayForecast: Decodable{
+struct DayForecast: Codable{
     let dt: Double
     let sunrise: Double
     let sunset: Double
@@ -86,7 +86,7 @@ extension DayForecast {
         DayForecast(dt: Date().advanced(by: 24*60*60).timeIntervalSince1970, sunrise: Date().timeIntervalSince1970, sunset: Date().timeIntervalSince1970, moonrise: Date().timeIntervalSince1970, moonset: Date().timeIntervalSince1970, temp: TempForecast(day: 25.0, min: 25.0, max: 25.0, night: 25.0, eve: 25.0, morn: 25.0), pressure: 10, humidity: 10, wind_speed: 10, wind_deg: 10, feels_like: FeelsLikeForecast(morn: 25.0, day: 25.0, eve: 25.0, night: 25.0), weather: [WeatherForecast(main: "Clouds", description: "clouds")])
     }
 }
-struct FeelsLikeForecast: Decodable {
+struct FeelsLikeForecast: Codable {
     let morn: Double
     let day: Double
     let eve: Double

@@ -27,6 +27,12 @@ public class WeatherViewModel: ObservableObject {
             city = "London"
         }
         else {
+            city = WidgetWeatherStore.fetchCity()
+            country = WidgetWeatherStore.fetchCountry()
+            if let weekForecast = WidgetWeatherStore.fetchWeekForecast() {
+                dailyForecasts = weekForecast.daily
+            }
+            
             refresh()
         }
     }
@@ -41,14 +47,14 @@ public class WeatherViewModel: ObservableObject {
                     return
                 }
                 let location = await AsyncWeatherService.requestGeoLoc(forCoordinates: coordinates)
-                let weather = try await AsyncWeatherService.requestWeather(forCoordinates: coordinates)
+                let weekForecast = try await AsyncWeatherService.requestWeather(forCoordinates: coordinates)
      
                 
                 DispatchQueue.main.async {
                     self.country = location.country
                     self.city = location.city
-                    self.dailyForecasts = weather.daily
-                    WidgetWeatherStore.save(city: self.city, country: self.country, tempForecasts: self.dailyForecasts[0].temp, sky: self.dailyForecasts[0].weather[0])
+                    self.dailyForecasts = weekForecast.daily
+                    WidgetWeatherStore.save(city: self.city, country: self.country, weekForecast: weekForecast, tempForecasts: self.dailyForecasts[0].temp, sky: self.dailyForecasts[0].weather[0])
                 }
                 
             }

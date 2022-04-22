@@ -9,7 +9,7 @@ import Foundation
 
 
 struct WidgetWeatherStore {
-    static func save(city: String, country: String, tempForecasts: TempForecast, sky: WeatherForecast) -> Void{
+    static func save(city: String, country: String, weekForecast: WeekForecast, tempForecasts: TempForecast, sky: WeatherForecast) -> Void{
         UserDefaults.standard.set(city, forKey: "city")
         UserDefaults.standard.set(country, forKey: "country")
         let encoder = JSONEncoder()
@@ -19,6 +19,9 @@ struct WidgetWeatherStore {
         if let encoded = try? encoder.encode(sky){
             UserDefaults.standard.set(encoded, forKey: "sky")
         }
+        if let encoded = try? encoder.encode(weekForecast){
+            UserDefaults.standard.set(encoded, forKey: "weekForecast")
+        }
     }
     
     static func fetchCity() -> String {
@@ -26,6 +29,12 @@ struct WidgetWeatherStore {
     }
     static func fetchCountry() -> String {
         UserDefaults.standard.string(forKey: "country") ?? ""
+    }
+    static func fetchWeekForecast() -> WeekForecast? {
+        if let savedData = UserDefaults.standard.data(forKey: "weekForecast") {
+            return try? JSONDecoder().decode(WeekForecast.self, from: savedData)
+        }
+        return nil
     }
     static func fetchForecast() -> TempForecast{
         if let savedData = UserDefaults.standard.object(forKey: "weather"){
