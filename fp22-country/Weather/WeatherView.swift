@@ -32,58 +32,25 @@ struct WeatherView: View {
          //   } label: {
            //     Label(vm.city, systemImage: "location")
             //}
-//            ScrollView (.horizontal, showsIndicators: false) {
-//                 HStack {
-//                     ForEach(vm.dailyForecasts, id: \.dt) {
-//                         dailyForecast in
-//                         NavigationLink {
-//                             FullDayWeatherView(dayWeather: dailyForecast)
-//                         } label: {
-//                             SummaryDayWeatherView(dayWeather: dailyForecast, city: vm.city)
-//                                 .frame(width:390)
-//                                // .cornerRadius(10)
-//                         }.buttonStyle(.plain)
-//
-//                     }
-//                 }.frame(maxHeight:.infinity)
-//            }
-            
-            TabView {
-                ForEach(vm.dailyForecasts, id: \.dt) {
-                    dailyForecast in
-                    NavigationLink {
-                        FullDayWeatherView(dayWeather: dailyForecast)
-                    } label: {
-                        SummaryDayWeatherView(dayWeather: dailyForecast, city: vm.city)
-                    }
-                    .buttonStyle(.plain)
-                    .tabItem {
-                        Label(dailyForecast.weather.first?.main ?? "N/A", systemImage: WeatherUtils.systemImageMap[dailyForecast.weather.first?.main ?? "N/A"] ?? "questionmark.circle")
-                    }
-                }
-                .frame(height: geometry.size.height+60)
+            ScrollView (.horizontal, showsIndicators: false) {
+                 HStack {
+                     ForEach(vm.dailyForecasts, id: \.dt) {
+                         dailyForecast in
+                         NavigationLink {
+                             FullDayWeatherView(dayWeather: dailyForecast)
+                         } label: {
+                             SummaryDayWeatherView(dayWeather: dailyForecast, city: vm.city)
+                                 .frame(width:390)
+                                // .cornerRadius(10)
+                         }
+                         .buttonStyle(.plain)
 
+                     }
+                 }
+                 .frame(maxHeight:.infinity)
             }
-            .tabViewStyle(.page)
-            .overlay(alignment:.topTrailing) {
-                HStack(spacing: 15) {
-                    NavigationLink {
-                        AIView()
-                    } label: {
-                        Image(systemName: "brain")
-                    }.buttonStyle(.plain)
-                    NavigationLink {
-                        SettingsView()
-                    } label: {
-                        Image(systemName: "gear")
-                    }.buttonStyle(.plain)
-                }
-                .font(.title)
-                .padding(.top, 60)
-                .padding()
-            }
+            .ignoresSafeArea()
         }
-        .ignoresSafeArea()
     }
     
 }
@@ -93,5 +60,6 @@ struct WeatherView_Previews: PreviewProvider {
         NavigationView {
             WeatherView(preview: true).preferredColorScheme(.dark).navigationBarHidden(true)
         }
+        .previewInterfaceOrientation(.landscapeLeft)
     }
 }

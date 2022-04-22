@@ -19,12 +19,14 @@ struct CompassView: View {
                 .foregroundColor(Color.gray)
                 .padding(.bottom)
             ZStack {
-                Capsule()
-                    .frame(width: 5,
-                            height: 25)
-                    .foregroundColor(Color.blue)
-                    .padding(.bottom, 360)
-                    .rotationEffect(Angle(degrees: windHeading))
+                VStack {
+                    Capsule()
+                        .frame(width: 5,
+                                height: 25)
+                        .foregroundColor(Color.blue)
+                        .padding(.bottom, 360)
+                    Text("Wind").rotationEffect(windTextAngle())
+                }.rotationEffect(Angle(degrees: windHeading))
                 ForEach(Marker.markers(), id: \.self) { marker in
                     CompassMarkerView(marker: marker,
                                       compassDegress: vm.compassHeading)
@@ -45,6 +47,11 @@ struct CompassView: View {
                 Label("Stop tracking", systemImage: "stop").frame(maxWidth:.infinity).padding([.top, .bottom]).background(.thinMaterial).cornerRadius(10)
             }
         }.padding()
+    }
+    
+    private func windTextAngle() -> Angle {
+        return Angle(degrees: -vm.compassHeading - windHeading)
+//        return Angle(degrees: 0)
     }
 }
 
