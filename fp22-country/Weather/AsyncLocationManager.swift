@@ -20,17 +20,23 @@ class AsyncLocationManager: NSObject, CLLocationManagerDelegate {
     private var locationStreamContinuation: AsyncStream<CLLocation?>.Continuation?
     private var headingStreamContinuation: AsyncStream<CLHeading>.Continuation?
     
-    let manager = CLLocationManager()
+    private let manager = CLLocationManager()
 
     override init() {
         authStatus = manager.authorizationStatus
+        manager.desiredAccuracy = kCLLocationAccuracyBest
         super.init()
         manager.delegate = self
     }
-    func requestAuthorization() async -> CLAuthorizationStatus {
-        manager.requestWhenInUseAuthorization()
-        return await withCheckedContinuation { continuation in
-            self.authContinuation = continuation
+    func requestWhenInUseAuthorization() async -> CLAuthorizationStatus {
+        if manager.authorizationStatus == CLAuthorizationStatus.authorizedWhenInUse {
+            return manager.authorizationStatus
+        }
+        else {
+            manager.requestWhenInUseAuthorization()
+            return await withCheckedContinuation { continuation in
+                self.authContinuation = continuation
+            }
         }
     }
     
@@ -61,7 +67,6 @@ class AsyncLocationManager: NSObject, CLLocationManagerDelegate {
     // Heading AsyncStream
     func requestHeadingStream() -> AsyncStream<CLHeading> {
         let locations = AsyncStream(CLHeading.self) { continuation in
-            print("\(CLLocationManager.headingAvailable())")
             self.headingStreamContinuation = continuation
             self.startHeadingStream()
         }

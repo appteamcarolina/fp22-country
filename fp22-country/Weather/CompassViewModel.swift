@@ -16,12 +16,12 @@ class CompassViewModel: ObservableObject {
     
     func startTracking() {
         Task {
-            let authStatus = await locationManager.requestAuthorization()
+            let authStatus = await locationManager.requestWhenInUseAuthorization()
             let asyncStream = self.locationManager.requestHeadingStream()
-            print("Start tracking")
             for await heading in asyncStream {
-                print("Streamed")
-                self.compassHeading = heading.magneticHeading
+                DispatchQueue.main.async {
+                    self.compassHeading = -1 * heading.magneticHeading
+                }
             }
         }
     }
