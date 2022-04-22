@@ -25,8 +25,8 @@ struct SummaryDayWeatherView: View {
            
             
             SummaryTemperatureView(dayWeather:dayWeather)
-            SummaryFeelsLikeView(dayWeather:dayWeather)
-            AIAppView()
+//            SummaryFeelsLikeView(dayWeather:dayWeather)
+            AIAppView(dayWeather:dayWeather)
             Spacer()
             
 //            GroupBox {

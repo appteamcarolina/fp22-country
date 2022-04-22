@@ -8,12 +8,14 @@
 import Foundation
 
 struct WidgetAIStore {
+    static let userDefaults = UserDefaults(suiteName: "group.com.fp22-country.contents")!
+    
     static func save(choices: String) -> Void{
-        UserDefaults.standard.set(choices, forKey: "choices")
+        userDefaults.set(choices, forKey: "choices")
     }
     
     static func fetchChoices() -> String {
-        UserDefaults.standard.string(forKey: "choices") ?? "Default"
+        userDefaults.string(forKey: "choices") ?? "Default"
     }
     
 }

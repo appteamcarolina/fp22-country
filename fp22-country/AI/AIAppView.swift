@@ -8,13 +8,38 @@
 import SwiftUI
 
 struct AIAppView: View {
-    @StateObject var vm: AIViewModel = AIViewModel()
+    @StateObject var vm: AIAppViewModel = AIAppViewModel()
+        
+    init() {
+        
+    }
+    init(dayWeather: DayForecast) {
+        _vm = StateObject(wrappedValue: AIAppViewModel(dayWeather: dayWeather))
+    }
+    
     var body: some View {
         GroupBox{
             Divider()
-            HStack{
-                Text("A light jacket, boots, a scarf, or sweater")
-                    .font(.title2)
+            VStack(alignment:.leading){
+                Text("Q: ").bold() + Text(vm.prompt)
+                if (vm.received) {
+                    Text("A: ").bold() + Text(vm.output)
+                }
+                else {
+                    HStack {
+                        Text("A: ").bold()
+                        if (vm.inProgress) {
+                            ProgressView()
+                        }
+                    }
+                }
+                Button {
+                    vm.submit()
+                } label: {
+                    RoundedRectangle(cornerSize: CGSize(width: 5, height: 5)).strokeBorder( lineWidth:2).overlay(alignment: .center) {
+                        Label("Get suggestion", systemImage: "gear")
+                    }.frame(maxWidth: .infinity).frame(height: 40)
+                }.buttonStyle(.plain)
             }
         }
     label: {
