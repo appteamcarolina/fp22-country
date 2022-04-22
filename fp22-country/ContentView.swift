@@ -18,18 +18,11 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            TabView {
-                WeatherView(preview: preview).tabItem {
-                    Label("Debugging Weather View", systemImage: "cloud")
-                }
-                AIView().tabItem {
-                    Label("Debugging AI View", systemImage: "ladybug")
-                }
-                
+            WeatherView(preview: preview).tabItem {
+                Label("Debugging Weather View", systemImage: "cloud")
             }
+            .navigationBarHidden(true)
             .accentColor(.blue)
-           // .frame(height: 700)
-           
         }
     }
 }

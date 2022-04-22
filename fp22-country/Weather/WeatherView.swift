@@ -19,7 +19,7 @@ struct WeatherView: View {
 
     
     var body: some View {
-        VStack {
+        GeometryReader { geometry in
            // GroupBox {
              //   HStack {
                //     VStack(alignment:.leading) {
@@ -32,20 +32,48 @@ struct WeatherView: View {
          //   } label: {
            //     Label(vm.city, systemImage: "location")
             //}
-            ScrollView (.horizontal, showsIndicators: false) {
-                 HStack {
-                     ForEach(vm.dailyForecasts, id: \.dt) {
-                         dailyForecast in
-                         NavigationLink {
-                             FullDayWeatherView(dayWeather: dailyForecast)
-                         } label: {
-                             SummaryDayWeatherView(dayWeather: dailyForecast, city: vm.city)
-                                 .frame(width:390)
-                                // .cornerRadius(10)
-                         }.buttonStyle(.plain)
-                         
-                     }
-                 }.frame(maxHeight:.infinity)
+//            ScrollView (.horizontal, showsIndicators: false) {
+//                 HStack {
+//                     ForEach(vm.dailyForecasts, id: \.dt) {
+//                         dailyForecast in
+//                         NavigationLink {
+//                             FullDayWeatherView(dayWeather: dailyForecast)
+//                         } label: {
+//                             SummaryDayWeatherView(dayWeather: dailyForecast, city: vm.city)
+//                                 .frame(width:390)
+//                                // .cornerRadius(10)
+//                         }.buttonStyle(.plain)
+//
+//                     }
+//                 }.frame(maxHeight:.infinity)
+//            }
+            
+            TabView {
+                ForEach(vm.dailyForecasts, id: \.dt) {
+                    dailyForecast in
+                    NavigationLink {
+                        FullDayWeatherView(dayWeather: dailyForecast)
+                    } label: {
+                        SummaryDayWeatherView(dayWeather: dailyForecast, city: vm.city)
+                    }
+                    .buttonStyle(.plain)
+                    .tabItem {
+                        Label(dailyForecast.weather.first?.main ?? "N/A", systemImage: WeatherUtils.systemImageMap[dailyForecast.weather.first?.main ?? "N/A"] ?? "questionmark.circle")
+                    }
+                }
+                .frame(height: geometry.size.height+60)
+
+            }
+            .tabViewStyle(.page)
+            .overlay(alignment:.topTrailing) {
+                NavigationLink {
+                    AIView()
+                } label: {
+                    Image(systemName: "brain")
+                }
+                .buttonStyle(.plain)
+                .padding(.top, 60)
+                .padding()
             }
         }
         .ignoresSafeArea()
@@ -56,7 +84,7 @@ struct WeatherView: View {
 struct WeatherView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            WeatherView(preview: true).preferredColorScheme(.dark)
+            WeatherView(preview: true).preferredColorScheme(.dark).navigationBarHidden(true)
         }
     }
 }
