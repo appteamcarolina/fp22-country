@@ -19,11 +19,16 @@ struct ContentView: View {
             TabView {
                 WeatherView(preview: preview).tabItem {
                     Label("Debugging Weather View", systemImage: "cloud")
-                }
+                }.navigationBarHidden(true)
                 AIView().tabItem {
                     Label("Debugging AI View", systemImage: "ladybug")
-                }
+                }.navigationBarHidden(true)
             }
+//            .onAppear {
+//
+//            }
+//            .navigationBarHidden(true)
+//            .navigationBarBackButtonHidden(true)
         }
     }
 }

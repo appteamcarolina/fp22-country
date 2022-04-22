@@ -43,9 +43,9 @@ struct WeatherView: View {
                          }.buttonStyle(.plain)
                          
                      }
-                 }
+                 }.frame(maxHeight:.infinity)
             }
-        }.navigationBarHidden(true)
+        }
     }
     
 }
