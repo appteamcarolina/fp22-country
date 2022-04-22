@@ -39,6 +39,8 @@
 		E18C0B7427FD3CEA0066F46A /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C0B7327FD3CEA0066F46A /* WeatherService.swift */; };
 		E18C0B7A27FD45980066F46A /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C0B7927FD45980066F46A /* WeatherView.swift */; };
 		E18C0B7C27FD45A30066F46A /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C0B7B27FD45A30066F46A /* WeatherViewModel.swift */; };
+		E1E13B84281230B700C91A04 /* CompassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E13B83281230B700C91A04 /* CompassView.swift */; };
+		E1E13B86281230D300C91A04 /* CompassViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E13B85281230D300C91A04 /* CompassViewModel.swift */; };
 		E1FE8355280796F0000AFAAD /* AIStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FE8354280796F0000AFAAD /* AIStructs.swift */; };
 		E1FE835728079702000AFAAD /* WeatherStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FE835628079702000AFAAD /* WeatherStructs.swift */; };
 		E1FE835928079795000AFAAD /* AsyncAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FE835828079795000AFAAD /* AsyncAIService.swift */; };
@@ -123,6 +125,8 @@
 		E18C0B7327FD3CEA0066F46A /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		E18C0B7927FD45980066F46A /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		E18C0B7B27FD45A30066F46A /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		E1E13B83281230B700C91A04 /* CompassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassView.swift; sourceTree = "<group>"; };
+		E1E13B85281230D300C91A04 /* CompassViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassViewModel.swift; sourceTree = "<group>"; };
 		E1FE8354280796F0000AFAAD /* AIStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIStructs.swift; sourceTree = "<group>"; };
 		E1FE835628079702000AFAAD /* WeatherStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStructs.swift; sourceTree = "<group>"; };
 		E1FE835828079795000AFAAD /* AsyncAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAIService.swift; sourceTree = "<group>"; };
@@ -279,6 +283,8 @@
 				E1FE83642807BE60000AFAAD /* SummaryDayWeatherView.swift */,
 				E1FE835E2807AC2A000AFAAD /* FullDayWeatherView.swift */,
 				E18C0B7B27FD45A30066F46A /* WeatherViewModel.swift */,
+				E1E13B83281230B700C91A04 /* CompassView.swift */,
+				E1E13B85281230D300C91A04 /* CompassViewModel.swift */,
 				E1FE835A28079B46000AFAAD /* AsyncWeatherService.swift */,
 				E1FE835C28079C22000AFAAD /* AsyncLocationManager.swift */,
 				E1FE835628079702000AFAAD /* WeatherStructs.swift */,
@@ -469,6 +475,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1E13B84281230B700C91A04 /* CompassView.swift in Sources */,
 				E1FE8355280796F0000AFAAD /* AIStructs.swift in Sources */,
 				E18C0B6A27FD00B10066F46A /* AIView.swift in Sources */,
 				E1FE835D28079C22000AFAAD /* AsyncLocationManager.swift in Sources */,
@@ -479,6 +486,7 @@
 				E1FE835728079702000AFAAD /* WeatherStructs.swift in Sources */,
 				E18C0B7A27FD45980066F46A /* WeatherView.swift in Sources */,
 				E18C0B6827FCFAEB0066F46A /* AIService.swift in Sources */,
+				E1E13B86281230D300C91A04 /* CompassViewModel.swift in Sources */,
 				E1FE835928079795000AFAAD /* AsyncAIService.swift in Sources */,
 				E1FE835F2807AC2A000AFAAD /* FullDayWeatherView.swift in Sources */,
 				E1FE83672807C221000AFAAD /* Utils.swift in Sources */,

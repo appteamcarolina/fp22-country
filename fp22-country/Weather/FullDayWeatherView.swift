@@ -26,12 +26,38 @@ struct FullDayWeatherView: View {
                 
                 GroupBox {
                     Divider()
+                    HStack(alignment:.top) {
+                        VStack(alignment:.leading) {
+                            Text("Wind Speed: \(dayWeather.wind_speed, specifier: "%.1f") m/s")
+                            Text("Wind Deg: \(dayWeather.wind_deg)°")
+                        }.scaledToFill()
+                        NavigationLink {
+                            CompassView(windHeading:Double(dayWeather.wind_deg))
+                        } label: {
+                            ZStack {
+                                Circle().stroke(Color.black, lineWidth: 2).scaledToFit()
+                                VStack{
+                                    Image(systemName: "location.north").resizable().scaledToFit().foregroundColor(.red)
+                                    Image(systemName: "location.north").resizable().scaledToFit().rotationEffect(Angle(degrees: 180)).foregroundColor(.white)
+                                    
+                                }.scaledToFit().rotationEffect(Angle(degrees: Double(dayWeather.wind_deg)))
+                            }.aspectRatio(1, contentMode: .fit).contentShape(Rectangle())
+                        }
+                        
+//                        Spacer()
+                    }
+                } label: {
+                    Label("Wind Info", systemImage: "wind")
+                }.groupBoxStyle(TransparentGroupBox())
+                
+                GroupBox {
+                    Divider()
                     HStack {
                         VStack(alignment:.leading) {
                             Label("Pressure: \(dayWeather.pressure) hPa", systemImage: "barometer")
                             Label("Humidity: \(dayWeather.humidity)%", systemImage: "humidity")
-                            Label("Wind Speed: \(dayWeather.wind_speed, specifier: "%.1f") m/s", systemImage: "wind")
-                            Label("Wind Deg: \(dayWeather.humidity)°", systemImage: "wind")
+//                            Label("Wind Speed: \(dayWeather.wind_speed, specifier: "%.1f") m/s", systemImage: "wind")
+//                            Label("Wind Deg: \(dayWeather.humidity)°", systemImage: "wind")
                         }
                         Spacer()
                     }
@@ -54,7 +80,9 @@ struct FullDayWeatherView: View {
 
 struct DayWeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        FullDayWeatherView(dayWeather: DayForecast.drizzle).preferredColorScheme(.dark)
+        NavigationView {
+            FullDayWeatherView(dayWeather: DayForecast.drizzle).preferredColorScheme(.dark)
+        }
     }
 }
 

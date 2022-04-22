@@ -9,12 +9,12 @@ import Foundation
 import CoreLocation
 
 struct AsyncWeatherService {
-    public static func requestGeoLoc(forCoordinates coordinates: CLLocationCoordinate2D) async -> Location {
+    public static func requestGeoLoc(forCoordinates coordinates: CLLocation) async -> Location {
         // Geolocation
         // https://stackoverflow.com/questions/62704004/swiftui-get-city-locality-information-from-users-location
         let geoCoder = CLGeocoder()
         let geoLoc: Location = await withCheckedContinuation({ continuation in
-            geoCoder.reverseGeocodeLocation(CLLocation(latitude: coordinates.latitude, longitude: coordinates.longitude)) {
+            geoCoder.reverseGeocodeLocation(CLLocation(latitude: coordinates.coordinate.latitude, longitude: coordinates.coordinate.longitude)) {
                 placemarks, error -> Void in
                 // Place details
                 guard let placeMark = placemarks?.first else { return }
@@ -26,7 +26,7 @@ struct AsyncWeatherService {
         })
         return geoLoc
     }
-    public static func requestWeather(forCoordinates coordinates: CLLocationCoordinate2D) async throws -> WeekForecast{
+    public static func requestWeather(forCoordinates coordinates: CLLocation) async throws -> WeekForecast{
         // Weather
         
         var components = URLComponents()
@@ -35,8 +35,8 @@ struct AsyncWeatherService {
         components.path = "/data/2.5/onecall"
         
         let query = [
-            URLQueryItem(name: "lat", value: "\(coordinates.latitude)"),
-            URLQueryItem(name: "lon", value: "\(coordinates.longitude)"),
+            URLQueryItem(name: "lat", value: "\(coordinates.coordinate.latitude)"),
+            URLQueryItem(name: "lon", value: "\(coordinates.coordinate.longitude)"),
             URLQueryItem(name: "exclude", value: "hourly,alerts,minutely,current"),
             URLQueryItem(name: "appid", value: "\(Keys.WEATHER_API_KEY)"),
             URLQueryItem(name: "units", value: "metric")
