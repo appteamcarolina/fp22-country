@@ -12,6 +12,10 @@ import CoreLocation
 // https://www.hackingwithswift.com/quick-start/concurrency/how-to-store-continuations-to-be-resumed-later
 //@MainActor
 class AsyncLocationManager: NSObject, CLLocationManagerDelegate {
+    
+    private(set) var authStatus: CLAuthorizationStatus
+    private var authContinuation: CheckedContinuation<CLAuthorizationStatus, Never>?
+    
     private var locationContinuation: CheckedContinuation<CLLocation?, Error>?
     private var locationStreamContinuation: AsyncStream<CLLocation?>.Continuation?
     private var headingStreamContinuation: AsyncStream<CLHeading>.Continuation?
@@ -19,24 +23,28 @@ class AsyncLocationManager: NSObject, CLLocationManagerDelegate {
     let manager = CLLocationManager()
 
     override init() {
-//        print("init")
+        authStatus = manager.authorizationStatus
         super.init()
         manager.delegate = self
     }
+    func requestAuthorization() async -> CLAuthorizationStatus {
+        manager.requestWhenInUseAuthorization()
+        return await withCheckedContinuation { continuation in
+            self.authContinuation = continuation
+        }
+    }
+    
     // Location async request
     func requestLocation() async throws -> CLLocation? {
-//        print("request")
         return try await withCheckedThrowingContinuation { continuation in
-            locationContinuation = continuation
-            manager.requestWhenInUseAuthorization()
-            manager.requestLocation()
+            self.locationContinuation = continuation
+            self.manager.requestLocation()
         }
     }
     
     // Location AsyncStream
     func requestLocationStream() -> AsyncStream<CLLocation?> {
         let locations = AsyncStream(CLLocation?.self) { continuation in
-            manager.requestWhenInUseAuthorization()
             self.locationStreamContinuation = continuation
             self.startLocationStream()
         }
@@ -53,7 +61,6 @@ class AsyncLocationManager: NSObject, CLLocationManagerDelegate {
     // Heading AsyncStream
     func requestHeadingStream() -> AsyncStream<CLHeading> {
         let locations = AsyncStream(CLHeading.self) { continuation in
-            manager.requestWhenInUseAuthorization()
             print("\(CLLocationManager.headingAvailable())")
             self.headingStreamContinuation = continuation
             self.startHeadingStream()
@@ -61,18 +68,16 @@ class AsyncLocationManager: NSObject, CLLocationManagerDelegate {
         return locations
     }
     func startHeadingStream() {
-//        manager.startUpdatingLocation()
         manager.startUpdatingHeading()
     }
     func stopHeadingStream() {
         headingStreamContinuation?.finish()
         headingStreamContinuation = nil
-//        manager.stopUpdatingLocation()
         manager.stopUpdatingHeading()
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        print("Heading")
+//        print("Heading")
         headingStreamContinuation?.yield(newHeading)
     }
     
@@ -86,5 +91,10 @@ class AsyncLocationManager: NSObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         locationContinuation?.resume(throwing: error)
         locationContinuation = nil
+    }
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        authStatus = manager.authorizationStatus
+        authContinuation?.resume(returning: authStatus)
+        authContinuation = nil
     }
 }

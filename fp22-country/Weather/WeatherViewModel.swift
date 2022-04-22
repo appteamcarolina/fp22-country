@@ -34,6 +34,7 @@ public class WeatherViewModel: ObservableObject {
     public func refresh() {
         Task {
             do {
+                let authStatus = await locationManager.requestAuthorization()
                 let coordinates = try await locationManager.requestLocation()
                 guard let coordinates = coordinates else {
                     print("coordinates not available")
