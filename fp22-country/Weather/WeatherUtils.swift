@@ -39,6 +39,7 @@ public struct WeatherUtils {
         LinearGradient(colors: [.gray, .white, .blue],
                        startPoint: .top,
                        endPoint: .bottom)
+
     }
     static var clearGradient: LinearGradient {
         LinearGradient(colors: [.cyan, .blue],
@@ -49,21 +50,28 @@ public struct WeatherUtils {
         LinearGradient(colors: [.white, .teal, .blue],
                        startPoint: .top,
                        endPoint: .bottom)
+            
+
     }
     static var rainGradient: LinearGradient {
         LinearGradient(colors: [.gray, .blue],
                        startPoint: .top,
                        endPoint: .bottom)
+            
     }
     static var thunderstormGradient: LinearGradient {
         LinearGradient(colors: [.black, .blue],
                        startPoint: .top,
                        endPoint: .bottom)
+        
+
     }
     static var drizzleGradient: LinearGradient {
         LinearGradient(colors: [.gray, .teal, .blue],
                        startPoint: .top,
                        endPoint: .bottom)
+            
+
     }
     static func formatUnixWeekDayAndDate (_ time: Double) -> String {
         return format(Date(timeIntervalSince1970: time), format: "EEEE M/d")

@@ -10,26 +10,28 @@ import SwiftUI
 struct WeatherView: View {
     
     @StateObject var vm: WeatherViewModel
-    
+
     
     init(preview: Bool = false) {
         _vm = StateObject<WeatherViewModel>(wrappedValue: WeatherViewModel(preview: preview))
     }
     
+
+    
     var body: some View {
         VStack {
-            GroupBox {
-                HStack {
-                    VStack(alignment:.leading) {
-                        Text("Country: \(vm.country)")
-                        Text("City: \(vm.city)")
-                    }
-                    Spacer()
-                }
+           // GroupBox {
+             //   HStack {
+               //     VStack(alignment:.leading) {
+                 //       Text("Country: \(vm.country)")
+                   //     Text("City: \(vm.city)")
+                 //   }
+               // Spacer()
+                //}
                 
-            } label: {
-                Label("Location", systemImage: "location")
-            }
+         //   } label: {
+           //     Label(vm.city, systemImage: "location")
+            //}
             ScrollView (.horizontal, showsIndicators: false) {
                  HStack {
                      ForEach(vm.dailyForecasts, id: \.dt) {
@@ -37,15 +39,16 @@ struct WeatherView: View {
                          NavigationLink {
                              FullDayWeatherView(dayWeather: dailyForecast)
                          } label: {
-                             SummaryDayWeatherView(dayWeather: dailyForecast)
-                                 .frame(width: 300)
-                                 .cornerRadius(10)
+                             SummaryDayWeatherView(dayWeather: dailyForecast, city: vm.city)
+                                 .frame(width:390)
+                                // .cornerRadius(10)
                          }.buttonStyle(.plain)
                          
                      }
                  }.frame(maxHeight:.infinity)
             }
         }
+        .ignoresSafeArea()
     }
     
 }

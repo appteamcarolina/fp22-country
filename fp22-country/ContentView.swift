@@ -12,6 +12,8 @@ struct ContentView: View {
     
     init(preview: Bool = false) {
         self.preview = preview
+     //   UITabBar.appearance().backgroundColor = UIColor.black
+        
     }
     
     var body: some View {
@@ -19,16 +21,15 @@ struct ContentView: View {
             TabView {
                 WeatherView(preview: preview).tabItem {
                     Label("Debugging Weather View", systemImage: "cloud")
-                }.navigationBarHidden(true)
+                }
                 AIView().tabItem {
                     Label("Debugging AI View", systemImage: "ladybug")
-                }.navigationBarHidden(true)
+                }
+                
             }
-//            .onAppear {
-//
-//            }
-//            .navigationBarHidden(true)
-//            .navigationBarBackButtonHidden(true)
+            .accentColor(.blue)
+           // .frame(height: 700)
+           
         }
     }
 }
