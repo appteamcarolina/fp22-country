@@ -23,7 +23,8 @@ struct Provider: TimelineProvider {
     
         let location = Location(city: WidgetWeatherStore.fetchCity(), country: WidgetWeatherStore.fetchCountry())
         let todayWeather = WidgetWeatherStore.fetchForecast()
-        let entry = SimpleEntry(date: Date(), location: location, weather: todayWeather, sky: .placeholder(), ai: WidgetAIStore.fetchChoices())
+        let sky = WidgetWeatherStore.fetchSky()
+        let entry = SimpleEntry(date: Date(), location: location, weather: todayWeather, sky: sky, ai: WidgetAIStore.fetchChoices())
         let timeline = Timeline(entries: [entry], policy: .after(.now.advanced(by: 60 * 60 * 30)))
         completion(timeline)
     }
