@@ -12,6 +12,8 @@ struct ContentView: View {
     
     init(preview: Bool = false) {
         self.preview = preview
+     //   UITabBar.appearance().backgroundColor = UIColor.black
+        
     }
     
     var body: some View {
@@ -23,7 +25,11 @@ struct ContentView: View {
                 AIView().tabItem {
                     Label("Debugging AI View", systemImage: "ladybug")
                 }
+                
             }
+            .accentColor(.blue)
+           // .frame(height: 700)
+           
         }
     }
 }

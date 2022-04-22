@@ -9,18 +9,25 @@ import SwiftUI
 
 struct SummaryDayWeatherView: View {
     let dayWeather: DayForecast
+    let city: String
     
     
     var body: some View {
         VStack {
+            Spacer()
             Text(WeatherUtils.formatUnixWeekDay(dayWeather.dt)).font(.largeTitle)
-            
             Label(dayWeather.weather.first?.main ?? "N/A", systemImage: WeatherUtils.systemImageMap[dayWeather.weather.first?.main ?? "N/A"] ?? "questionmark.circle").font(.title)
             
-            Text(dayWeather.weather.first?.description.capitalized ?? "N/A")
+         //   Text(dayWeather.weather.first?.description.capitalized ?? "N/A")
+            Text(city)
+                .fontWeight(.bold)
+            
+           
             
             SummaryTemperatureView(dayWeather:dayWeather)
             SummaryFeelsLikeView(dayWeather:dayWeather)
+            AIAppView()
+            Spacer()
             
 //            GroupBox {
 //                Divider()
@@ -66,7 +73,7 @@ struct SummaryDayWeatherView: View {
 //            } label: {
 //                Label("Temperature", systemImage: "thermometer")
 //            }.groupBoxStyle(TransparentGroupBox())
-            
+          //  Spacer(minLength: 1)
         }.padding().fullscreenBackground(WeatherUtils.gradientMap[dayWeather.weather.first?.main ?? "N/A"] ?? WeatherUtils.clearGradient)
     }
 }
@@ -75,7 +82,7 @@ struct SummaryDayWeatherView: View {
 
 struct SummaryDayWeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        SummaryDayWeatherView(dayWeather: DayForecast.thunderstorm).preferredColorScheme(.dark)
+        SummaryDayWeatherView(dayWeather: DayForecast.thunderstorm, city: "Chapel Hill").preferredColorScheme(.dark)
     }
 }
 
