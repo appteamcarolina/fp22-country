@@ -1,5 +1,5 @@
 # fp22-country
-Apprenticeship Spring 2022 - Final Project Repository
+Built by Vincent Zhou and Josh Myatt for App Team Carolina's Spring 2022 Apprenticeship Final Project
 
 ## Description
 Showcases daily and weekly weather data while also providing the user with a clothing suggestion via OpenAI's GPT-3 Model. This app includes a widget, as seen in the screenshot below.
