@@ -2,7 +2,7 @@
 Apprenticeship Spring 2022 - Final Project Repository
 
 ## Description
-Showcase daily and weekly weather data while also providing the user with a clothing suggestion via OpenAI's GPT-3 Model. This app includes a widget, as seen in the screenshot below.
+Showcases daily and weekly weather data while also providing the user with a clothing suggestion via OpenAI's GPT-3 Model. This app includes a widget, as seen in the screenshot below.
 
 ## App Preview
 <img src="./fp22country.gif" alt="Daily Weather View and AI Showcase Gif" height="500">
