@@ -20,7 +20,7 @@ struct AIStore {
     
     static func saveSettings(tokens: Int, temperature: Double) {
         userDefaults.set(tokens, forKey: "ai_tokens")
-        userDefaults.set(tokens, forKey: "ai_temperature")
+        userDefaults.set(tokens, forKey: "ai_temp")
     }
     static func fetchTokens() -> Int {
         let token = userDefaults.integer(forKey: "ai_tokens")
