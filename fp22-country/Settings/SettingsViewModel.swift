@@ -13,6 +13,6 @@ class SettingsViewModel: ObservableObject {
     
     
     func save() {
-        AIStore.saveSettings(tokens: tokens, temperature: temp)
+        AIStore.saveSettings(tokens: tokens, temp: temp)
     }
 }

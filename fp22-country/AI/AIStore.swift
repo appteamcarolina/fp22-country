@@ -18,9 +18,9 @@ struct AIStore {
         userDefaults.string(forKey: "choices") ?? "Default"
     }
     
-    static func saveSettings(tokens: Int, temperature: Double) {
+    static func saveSettings(tokens: Int, temp: Double) {
         userDefaults.set(tokens, forKey: "ai_tokens")
-        userDefaults.set(tokens, forKey: "ai_temp")
+        userDefaults.set(temp, forKey: "ai_temp")
     }
     static func fetchTokens() -> Int {
         let token = userDefaults.integer(forKey: "ai_tokens")
