@@ -84,7 +84,9 @@ struct WeatherView: View {
                             }
                             }.buttonStyle(.plain)
                         }
+
                     }
+                    .padding()
                     .padding(.top, 30)
                     .padding()
                 }
