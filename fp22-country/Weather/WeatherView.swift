@@ -79,7 +79,7 @@ struct WeatherView: View {
                             } label: {
                             VStack {
                                 Text(WeatherUtils.formatUnixShortWeekDay(dailyForecast.dt))
-                                Text("\(dailyForecast.temp.day, specifier: "%.0f")°C")
+                                Text("\(dailyForecast.temp.day, specifier: "%.0f")")
                                 Image(systemName: WeatherUtils.systemImageMap[dailyForecast.weather.first?.main ?? "N/A"] ?? "questionmark.circle").frame(height:5)
                             }
                             }.buttonStyle(.plain)
