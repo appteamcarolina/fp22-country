@@ -69,7 +69,7 @@ struct WeatherView: View {
                     .padding()
                 }
                 .overlay(alignment:.bottom) {
-                    HStack(spacing: 15) {
+                    HStack(spacing: 5) {
                         ForEach(vm.dailyForecasts, id: \.dt) {
                             dailyForecast in
                             Button {
@@ -86,9 +86,9 @@ struct WeatherView: View {
                         }
 
                     }
-                    .padding()
-                    .padding(.top, 30)
-                    .padding()
+//                    .padding()
+                    .padding(.bottom, 30)
+//                    .padding()
                 }
             }
 //            .ignoresSafeArea()
