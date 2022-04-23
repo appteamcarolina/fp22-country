@@ -32,39 +32,62 @@ struct WeatherView: View {
          //   } label: {
            //     Label(vm.city, systemImage: "location")
             //}
-            ScrollView (.horizontal, showsIndicators: false) {
-                 HStack {
-                     ForEach(vm.dailyForecasts, id: \.dt) {
-                         dailyForecast in
-                         NavigationLink {
-                             FullDayWeatherView(dayWeather: dailyForecast)
-                         } label: {
-                             SummaryDayWeatherView(dayWeather: dailyForecast, city: vm.city)
-                             .frame(maxHeight:.infinity)
-                             .frame(width: geometry.size.width)
-                                // .cornerRadius(10)
+            ScrollViewReader { proxy in
+                ScrollView (.horizontal, showsIndicators: false) {
+                     HStack {
+                         ForEach(vm.dailyForecasts, id: \.dt) {
+                             dailyForecast in
+                             NavigationLink {
+                                 FullDayWeatherView(dayWeather: dailyForecast)
+                             } label: {
+                                 SummaryDayWeatherView(dayWeather: dailyForecast, city: vm.city)
+                                 .frame(maxHeight:.infinity)
+                                 .frame(width: geometry.size.width)
+                                    // .cornerRadius(10)
+                             }
+                             .buttonStyle(.plain)
+                             .id(dailyForecast.dt)
                          }
-                         .buttonStyle(.plain)
                      }
-                 }
-                 
-            }
-            .overlay(alignment:.topTrailing) {
-                HStack(spacing: 15) {
-                    NavigationLink {
-                        AIView()
-                    } label: {
-                        Image(systemName: "brain")
-                    }.buttonStyle(.plain)
-                    NavigationLink {
-                        SettingsView()
-                    } label: {
-                        Image(systemName: "gear")
-                    }.buttonStyle(.plain)
+                     
                 }
-                .font(.title)
-                .padding(.top, 30)
-                .padding()
+                .overlay(alignment:.topTrailing) {
+                    HStack(spacing: 15) {
+                        NavigationLink {
+                            AIView()
+                        } label: {
+                            Image(systemName: "brain")
+                        }.buttonStyle(.plain)
+                        NavigationLink {
+                            SettingsView()
+                        } label: {
+                            Image(systemName: "gear")
+                        }.buttonStyle(.plain)
+                    }
+                    .font(.title)
+                    .padding(.top, 30)
+                    .padding()
+                }
+                .overlay(alignment:.bottom) {
+                    HStack(spacing: 15) {
+                        ForEach(vm.dailyForecasts, id: \.dt) {
+                            dailyForecast in
+                            Button {
+                                withAnimation {
+                                    proxy.scrollTo(dailyForecast.dt)
+                                }
+                            } label: {
+                            VStack {
+                                Text(WeatherUtils.formatUnixShortWeekDay(dailyForecast.dt))
+                                Text("\(dailyForecast.temp.day, specifier: "%.0f")°C")
+                                Image(systemName: WeatherUtils.systemImageMap[dailyForecast.weather.first?.main ?? "N/A"] ?? "questionmark.circle").frame(height:5)
+                            }
+                            }.buttonStyle(.plain)
+                        }
+                    }
+                    .padding(.top, 30)
+                    .padding()
+                }
             }
 //            .ignoresSafeArea()
         }

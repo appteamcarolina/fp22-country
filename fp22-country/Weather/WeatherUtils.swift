@@ -79,6 +79,21 @@ public struct WeatherUtils {
     static func formatUnixWeekDay (_ time: Double) -> String {
         return format(Date(timeIntervalSince1970: time), format: "EEEE")
     }
+    static func formatUnixShortWeekDay (_ time: Double) -> String {
+//        let weekDayMap = [
+//            "Sunday" : "Sa",
+//            "Monday" : "Mo",
+//            "Tuesday" : "Tu",
+//            "Wednesday" : "We",
+//            "Thursday" : "Th",
+//            "Friday" : "Fr",
+//            "Saturday" : "Su"
+//        ]
+        
+        return format(Date(timeIntervalSince1970: time), format: "E")
+
+//        return weekDayMap[format(Date(timeIntervalSince1970: time), format: "EEEE")] ?? "??"
+    }
     static func formatUnixDate(_ time: Double) -> String {
         return format(Date(timeIntervalSince1970: time), format: "M/d")
     }

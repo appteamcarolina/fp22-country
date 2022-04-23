@@ -13,7 +13,7 @@ struct SummaryDayWeatherView: View {
     
     
     var body: some View {
-        VStack {
+        ScrollView(showsIndicators: false) {
             Spacer()
             Text(WeatherUtils.formatUnixWeekDay(dayWeather.dt)).font(.largeTitle)
             Label(dayWeather.weather.first?.main ?? "N/A", systemImage: WeatherUtils.systemImageMap[dayWeather.weather.first?.main ?? "N/A"] ?? "questionmark.circle").font(.title)
@@ -27,7 +27,7 @@ struct SummaryDayWeatherView: View {
             SummaryTemperatureView(dayWeather:dayWeather)
 //            SummaryFeelsLikeView(dayWeather:dayWeather)
             AIAppView(dayWeather:dayWeather)
-            Spacer()
+//            Spacer()
             
 //            GroupBox {
 //                Divider()
@@ -74,7 +74,11 @@ struct SummaryDayWeatherView: View {
 //                Label("Temperature", systemImage: "thermometer")
 //            }.groupBoxStyle(TransparentGroupBox())
           //  Spacer(minLength: 1)
-        }.padding().fullscreenBackground(WeatherUtils.gradientMap[dayWeather.weather.first?.main ?? "N/A"] ?? WeatherUtils.clearGradient)
+        }
+        .padding([.bottom,.trailing,.leading])
+        .padding(.top, 40)
+        .fullscreenBackground(WeatherUtils.gradientMap[dayWeather.weather.first?.main ?? "N/A"] ?? WeatherUtils.clearGradient)
+        .ignoresSafeArea()
     }
 }
 
