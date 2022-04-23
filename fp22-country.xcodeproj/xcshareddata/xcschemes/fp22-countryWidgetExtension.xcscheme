@@ -43,6 +43,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "7815601528147CC3002928E9"
+               BuildableName = "fp22_countryTests.xctest"
+               BlueprintName = "fp22_countryTests"
+               ReferencedContainer = "container:fp22-country.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "7815602228147D2A002928E9"
+               BuildableName = "fp22Tests.xctest"
+               BlueprintName = "fp22Tests"
+               ReferencedContainer = "container:fp22-country.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -58,9 +78,15 @@
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
       <RemoteRunnable
-         runnableDebuggingMode = "1"
-         BundleIdentifier = "vincentorg.fp22-country"
-         RemotePath = "/Users/vincentzhou/Library/Developer/CoreSimulator/Devices/026A37E5-096C-4882-9D77-B51B1C4D0F6E/data/Containers/Bundle/Application/F81978BC-8CA1-47C7-8133-3760A1356D92/fp22-country.app">
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.springboard">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "78386EC72808BC2300337987"
+            BuildableName = "fp22-countryWidgetExtension.appex"
+            BlueprintName = "fp22-countryWidgetExtension"
+            ReferencedContainer = "container:fp22-country.xcodeproj">
+         </BuildableReference>
       </RemoteRunnable>
       <MacroExpansion>
          <BuildableReference

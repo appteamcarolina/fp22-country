@@ -13,7 +13,7 @@ struct SmallSizeView: View {
     var entry: SimpleEntry
     var vm = WidgetViewModel()
     var body: some View {
-        let clothesEmojiMap = vm.findEmojis(entry: entry)
+        let clothesEmoji = vm.findEmojis(entry: entry)
         ZStack{
             WeatherUtils.gradientMap[entry.sky.main] ?? WeatherUtils.clearGradient
             HStack{
@@ -21,28 +21,20 @@ struct SmallSizeView: View {
                     Text("\(entry.location.city)")
                         .font(.footnote)
                         .fontWeight(.light)
-                        .foregroundColor(.white)
-                        .frame(alignment: .leading)
+                        .foregroundColor(vm.textDeterminer(entry: entry))
+                        .multilineTextAlignment(.center)
                     VStack{
                         Text("\(vm.hourDetermine(entry: entry))º")
                             .font(.system(size: 40))
                             .fontWeight(.light)
-                            .foregroundColor(.white)
+                            .foregroundColor(vm.textDeterminer(entry: entry))
                         Text(WeatherUtils.emojiMap[entry.sky.main] ?? "")
                             .font(.system(size: 50))
                     }
                 }
                 VStack{
-                    if(clothesEmojiMap.count == 2){
-                        Text(clothesEmojiMap[0] ?? "")
-                            .font(.system(size: 50))
-                        Text(clothesEmojiMap[1] ?? "")
-                            .font(.system(size: 50))
-                    }
-                    else{
-                        Text(clothesEmojiMap[0] ?? "")
-                            .font(.system(size: 50))
-                    }
+                    Text(clothesEmoji ?? "")
+                        .font(.system(size: 50))
                     }
                 }
             }

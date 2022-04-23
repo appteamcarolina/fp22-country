@@ -25,7 +25,7 @@ struct Provider: TimelineProvider {
         let todayWeather = WeatherStore.fetchForecast()
         let sky = WeatherStore.fetchSky()
         let entry = SimpleEntry(date: Date(), location: location, weather: todayWeather, sky: sky, ai: AIStore.fetchChoices())
-        let timeline = Timeline(entries: [entry], policy: .after(.now.advanced(by: 60 * 60 * 30)))
+        let timeline = Timeline(entries: [entry], policy: .never)
         completion(timeline)
     }
     

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import WidgetKit
 
 
 struct WeatherStore {
@@ -24,6 +25,8 @@ struct WeatherStore {
         if let encoded = try? encoder.encode(weekForecast){
             userDefaults.set(encoded, forKey: "weekForecast")
         }
+        WidgetCenter.shared.reloadAllTimelines()
+        
     }
     
     static func fetchCity() -> String {

@@ -16,3 +16,12 @@ struct SimpleEntry: TimelineEntry {
     let sky: WeatherForecast
     let ai: String
 }
+
+
+extension SimpleEntry {
+    static func placeholder() -> SimpleEntry {
+        SimpleEntry(date: Date(), location: .placeHolder(), weather: .placeholder(), sky: .placeholder(), ai: "Test Test Test")
+    }
+}
+
+

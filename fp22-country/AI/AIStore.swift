@@ -6,12 +6,14 @@
 //
 
 import Foundation
+import WidgetKit
 
 struct AIStore {
     static let userDefaults = UserDefaults(suiteName: "group.com.fp22-country.contents")!
     
     static func save(choices: String) -> Void{
         userDefaults.set(choices, forKey: "choices")
+        WidgetCenter.shared.reloadAllTimelines()
     }
     
     static func fetchChoices() -> String {

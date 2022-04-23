@@ -8,12 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		780D3F34281215B90089541A /* AIAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780D3F33281215B90089541A /* AIAppView.swift */; };
+		7815602C28147D9D002928E9 /* WidgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A6FA67280F60FE0036433D /* WidgetViewModel.swift */; };
+		7815602D28147DA2002928E9 /* SimpleEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78386EDE2808BC4100337987 /* SimpleEntry.swift */; };
+		7815602E28147DA5002928E9 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78386EE02808BC5800337987 /* Provider.swift */; };
+		7815602F28147DAA002928E9 /* fp22_countryWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78386ECF2808BC2300337987 /* fp22_countryWidget.swift */; };
+		7815603028147DC3002928E9 /* WeatherStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FE835628079702000AFAAD /* WeatherStructs.swift */; };
+		7815603128147DE7002928E9 /* WeatherStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782821BA280DFF2E002645E9 /* WeatherStore.swift */; };
+		7815603228147DEB002928E9 /* AIStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782821BC280E015B002645E9 /* AIStore.swift */; };
+		7815603328147DF9002928E9 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78386EE22808BC9D00337987 /* WidgetView.swift */; };
+		7815603428147DFC002928E9 /* SmallSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78386EFB2808E6E800337987 /* SmallSizeView.swift */; };
+		7815603528147E0B002928E9 /* WeatherUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FE83622807BB3B000AFAAD /* WeatherUtils.swift */; };
 		782821BB280DFF2E002645E9 /* WeatherStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782821BA280DFF2E002645E9 /* WeatherStore.swift */; };
 		782821BD280E015B002645E9 /* AIStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782821BC280E015B002645E9 /* AIStore.swift */; };
 		782821BE280E0387002645E9 /* WeatherStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782821BA280DFF2E002645E9 /* WeatherStore.swift */; };
 		782821BF280E038B002645E9 /* AIStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782821BC280E015B002645E9 /* AIStore.swift */; };
 		782821C2280E0563002645E9 /* WeatherStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FE835628079702000AFAAD /* WeatherStructs.swift */; };
-		782821C4280E0D80002645E9 /* MediumSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782821C3280E0D80002645E9 /* MediumSizeView.swift */; };
 		78386ECB2808BC2300337987 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78386ECA2808BC2300337987 /* WidgetKit.framework */; };
 		78386ECD2808BC2300337987 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78386ECC2808BC2300337987 /* SwiftUI.framework */; };
 		78386ED32808BC2500337987 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78386ED22808BC2500337987 /* Assets.xcassets */; };
@@ -31,8 +40,6 @@
 		E18C0B4127FCF71F0066F46A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E18C0B4027FCF71F0066F46A /* Assets.xcassets */; };
 		E18C0B4427FCF71F0066F46A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E18C0B4327FCF71F0066F46A /* Preview Assets.xcassets */; };
 		E18C0B4E27FCF71F0066F46A /* fp22_countryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C0B4D27FCF71F0066F46A /* fp22_countryTests.swift */; };
-		E18C0B5827FCF71F0066F46A /* fp22_countryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C0B5727FCF71F0066F46A /* fp22_countryUITests.swift */; };
-		E18C0B5A27FCF71F0066F46A /* fp22_countryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C0B5927FCF71F0066F46A /* fp22_countryUITestsLaunchTests.swift */; };
 		E18C0B6827FCFAEB0066F46A /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C0B6727FCFAEB0066F46A /* AIService.swift */; };
 		E18C0B6A27FD00B10066F46A /* AIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C0B6927FD00B10066F46A /* AIView.swift */; };
 		E18C0B6C27FD33BC0066F46A /* AIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C0B6B27FD33BC0066F46A /* AIViewModel.swift */; };
@@ -71,13 +78,6 @@
 			remoteGlobalIDString = E18C0B3827FCF71D0066F46A;
 			remoteInfo = "fp22-country";
 		};
-		E18C0B5427FCF71F0066F46A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E18C0B3127FCF71D0066F46A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E18C0B3827FCF71D0066F46A;
-			remoteInfo = "fp22-country";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -96,9 +96,10 @@
 
 /* Begin PBXFileReference section */
 		780D3F33281215B90089541A /* AIAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIAppView.swift; sourceTree = "<group>"; };
+		7815601828147CC4002928E9 /* fp22_countryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fp22_countryTests.swift; sourceTree = "<group>"; };
+		7815602528147D2A002928E9 /* fp22Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fp22Tests.swift; sourceTree = "<group>"; };
 		782821BA280DFF2E002645E9 /* WeatherStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStore.swift; sourceTree = "<group>"; };
 		782821BC280E015B002645E9 /* AIStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIStore.swift; sourceTree = "<group>"; };
-		782821C3280E0D80002645E9 /* MediumSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumSizeView.swift; sourceTree = "<group>"; };
 		782C73A9280C417300256913 /* fp22-country.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "fp22-country.entitlements"; sourceTree = "<group>"; };
 		782C73AA280C41A400256913 /* fp22-countryWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "fp22-countryWidgetExtension.entitlements"; sourceTree = "<group>"; };
 		78386EC82808BC2300337987 /* fp22-countryWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "fp22-countryWidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,7 +121,6 @@
 		E18C0B4327FCF71F0066F46A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E18C0B4927FCF71F0066F46A /* fp22-countryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "fp22-countryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18C0B4D27FCF71F0066F46A /* fp22_countryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fp22_countryTests.swift; sourceTree = "<group>"; };
-		E18C0B5327FCF71F0066F46A /* fp22-countryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "fp22-countryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18C0B5727FCF71F0066F46A /* fp22_countryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fp22_countryUITests.swift; sourceTree = "<group>"; };
 		E18C0B5927FCF71F0066F46A /* fp22_countryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fp22_countryUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E18C0B6727FCFAEB0066F46A /* AIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIService.swift; sourceTree = "<group>"; };
@@ -170,16 +170,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E18C0B5027FCF71F0066F46A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7815601728147CC4002928E9 /* fp22_countryTests */ = {
+			isa = PBXGroup;
+			children = (
+				7815601828147CC4002928E9 /* fp22_countryTests.swift */,
+			);
+			path = fp22_countryTests;
+			sourceTree = "<group>";
+		};
+		7815602428147D2A002928E9 /* fp22Tests */ = {
+			isa = PBXGroup;
+			children = (
+				7815602528147D2A002928E9 /* fp22Tests.swift */,
+			);
+			path = fp22Tests;
+			sourceTree = "<group>";
+		};
 		78386EC92808BC2300337987 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,7 +209,6 @@
 				78386EE02808BC5800337987 /* Provider.swift */,
 				78386EE22808BC9D00337987 /* WidgetView.swift */,
 				78386EFB2808E6E800337987 /* SmallSizeView.swift */,
-				782821C3280E0D80002645E9 /* MediumSizeView.swift */,
 				78A6FA67280F60FE0036433D /* WidgetViewModel.swift */,
 			);
 			path = "fp22-countryWidget";
@@ -214,6 +222,8 @@
 				E18C0B4C27FCF71F0066F46A /* fp22-countryTests */,
 				E18C0B5627FCF71F0066F46A /* fp22-countryUITests */,
 				78386ECE2808BC2300337987 /* fp22-countryWidget */,
+				7815601728147CC4002928E9 /* fp22_countryTests */,
+				7815602428147D2A002928E9 /* fp22Tests */,
 				78386EC92808BC2300337987 /* Frameworks */,
 				E18C0B3A27FCF71D0066F46A /* Products */,
 			);
@@ -224,7 +234,6 @@
 			children = (
 				E18C0B3927FCF71D0066F46A /* fp22-country.app */,
 				E18C0B4927FCF71F0066F46A /* fp22-countryTests.xctest */,
-				E18C0B5327FCF71F0066F46A /* fp22-countryUITests.xctest */,
 				78386EC82808BC2300337987 /* fp22-countryWidgetExtension.appex */,
 			);
 			name = Products;
@@ -372,24 +381,6 @@
 			productReference = E18C0B4927FCF71F0066F46A /* fp22-countryTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E18C0B5227FCF71F0066F46A /* fp22-countryUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E18C0B6327FCF71F0066F46A /* Build configuration list for PBXNativeTarget "fp22-countryUITests" */;
-			buildPhases = (
-				E18C0B4F27FCF71F0066F46A /* Sources */,
-				E18C0B5027FCF71F0066F46A /* Frameworks */,
-				E18C0B5127FCF71F0066F46A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E18C0B5527FCF71F0066F46A /* PBXTargetDependency */,
-			);
-			name = "fp22-countryUITests";
-			productName = "fp22-countryUITests";
-			productReference = E18C0B5327FCF71F0066F46A /* fp22-countryUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -410,10 +401,6 @@
 						CreatedOnToolsVersion = 13.3;
 						TestTargetID = E18C0B3827FCF71D0066F46A;
 					};
-					E18C0B5227FCF71F0066F46A = {
-						CreatedOnToolsVersion = 13.3;
-						TestTargetID = E18C0B3827FCF71D0066F46A;
-					};
 				};
 			};
 			buildConfigurationList = E18C0B3427FCF71D0066F46A /* Build configuration list for PBXProject "fp22-country" */;
@@ -431,7 +418,6 @@
 			targets = (
 				E18C0B3827FCF71D0066F46A /* fp22-country */,
 				E18C0B4827FCF71F0066F46A /* fp22-countryTests */,
-				E18C0B5227FCF71F0066F46A /* fp22-countryUITests */,
 				78386EC72808BC2300337987 /* fp22-countryWidgetExtension */,
 			);
 		};
@@ -462,13 +448,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E18C0B5127FCF71F0066F46A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -480,7 +459,6 @@
 				78386ED52808BC2500337987 /* fp22_countryWidget.intentdefinition in Sources */,
 				78A6FA69280F66680036433D /* WeatherUtils.swift in Sources */,
 				78386EE32808BC9D00337987 /* WidgetView.swift in Sources */,
-				782821C4280E0D80002645E9 /* MediumSizeView.swift in Sources */,
 				78386EF92808C37200337987 /* SimpleEntry.swift in Sources */,
 				782821BF280E038B002645E9 /* AIStore.swift in Sources */,
 				782821BE280E0387002645E9 /* WeatherStore.swift in Sources */,
@@ -528,16 +506,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7815602E28147DA5002928E9 /* Provider.swift in Sources */,
+				7815602D28147DA2002928E9 /* SimpleEntry.swift in Sources */,
+				7815602C28147D9D002928E9 /* WidgetViewModel.swift in Sources */,
+				7815603528147E0B002928E9 /* WeatherUtils.swift in Sources */,
 				E18C0B4E27FCF71F0066F46A /* fp22_countryTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E18C0B4F27FCF71F0066F46A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E18C0B5827FCF71F0066F46A /* fp22_countryUITests.swift in Sources */,
-				E18C0B5A27FCF71F0066F46A /* fp22_countryUITestsLaunchTests.swift in Sources */,
+				7815603128147DE7002928E9 /* WeatherStore.swift in Sources */,
+				7815603428147DFC002928E9 /* SmallSizeView.swift in Sources */,
+				7815602F28147DAA002928E9 /* fp22_countryWidget.swift in Sources */,
+				7815603328147DF9002928E9 /* WidgetView.swift in Sources */,
+				7815603028147DC3002928E9 /* WeatherStructs.swift in Sources */,
+				7815603228147DEB002928E9 /* AIStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,11 +532,6 @@
 			isa = PBXTargetDependency;
 			target = E18C0B3827FCF71D0066F46A /* fp22-country */;
 			targetProxy = E18C0B4A27FCF71F0066F46A /* PBXContainerItemProxy */;
-		};
-		E18C0B5527FCF71F0066F46A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E18C0B3827FCF71D0066F46A /* fp22-country */;
-			targetProxy = E18C0B5427FCF71F0066F46A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -577,7 +551,7 @@
 				INFOPLIST_FILE = "fp22-countryWidget/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "fp22-countryWidget";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -609,7 +583,7 @@
 				INFOPLIST_FILE = "fp22-countryWidget/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "fp22-countryWidget";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -676,7 +650,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -730,7 +704,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -815,8 +789,9 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "vincentorg.fp22-countryTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -834,8 +809,9 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "vincentorg.fp22-countryTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -843,40 +819,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fp22-country.app/fp22-country";
-			};
-			name = Release;
-		};
-		E18C0B6427FCF71F0066F46A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "vincentorg.fp22-countryUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "fp22-country";
-			};
-			name = Debug;
-		};
-		E18C0B6527FCF71F0066F46A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "vincentorg.fp22-countryUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "fp22-country";
 			};
 			name = Release;
 		};
@@ -915,15 +857,6 @@
 			buildConfigurations = (
 				E18C0B6127FCF71F0066F46A /* Debug */,
 				E18C0B6227FCF71F0066F46A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E18C0B6327FCF71F0066F46A /* Build configuration list for PBXNativeTarget "fp22-countryUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E18C0B6427FCF71F0066F46A /* Debug */,
-				E18C0B6527FCF71F0066F46A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

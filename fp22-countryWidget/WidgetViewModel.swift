@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 
 public class WidgetViewModel: ObservableObject {
@@ -52,8 +53,8 @@ public class WidgetViewModel: ObservableObject {
     
     // remove all punctuation chars from string and return an array of the sentence split up by words
     private func parseInput(entry: SimpleEntry) -> Array<String> {
-        let testString = "A jacket."
-        var stringWithout = testString.replacingOccurrences(of: ".", with: "")
+        let inputString = entry.ai
+        var stringWithout = inputString.replacingOccurrences(of: ".", with: "")
         stringWithout = stringWithout.replacingOccurrences(of: ",", with: "")
         stringWithout = stringWithout.replacingOccurrences(of: "!", with: "")
         stringWithout = stringWithout.replacingOccurrences(of: "?", with: "")
@@ -65,30 +66,38 @@ public class WidgetViewModel: ObservableObject {
     
     
     // match AI output to clothing emojis
-    func findEmojis(entry: SimpleEntry) -> Array<String?> {
+    func findEmojis(entry: SimpleEntry) -> String? {
         let searchArray = parseInput(entry: entry)
-        var returnArray: Array<String?> = []
+        var newEmoji: String? = ""
         for word in searchArray {
-            let newEmoji: String? = aiToEmojiMap[word]
+            newEmoji = aiToEmojiMap[word]
             if aiToEmojiMap[word] != nil {
-                returnArray.append(newEmoji)
+                return newEmoji
             }
         }
-        if returnArray.count < 1 {
-            let newEmoji: String? = aiToEmojiMap[backUpWeather(entry: entry)]
-            if !returnArray.contains(newEmoji) {
-                returnArray.append(newEmoji)
-            }
-        }
-        return returnArray
+        newEmoji = aiToEmojiMap[backUpWeather(entry: entry)]
+        return newEmoji
+        
     }
     // if AI produces a weird output, fill in with a base emoji that kinda makes sense
     private func backUpWeather(entry: SimpleEntry) -> String {
-        if Int(hourDetermine(entry: entry)) ?? Int(entry.weather.day) < 60 {
+        if Int(hourDetermine(entry: entry)) ?? Int(entry.weather.day) < 15 {
             return "jacket"
         }
         else {
             return "t-shirt"
+        }
+    }
+    
+    func textDeterminer(entry: SimpleEntry) -> Color {
+        if entry.sky.main == "Clouds" {
+            return Color.black
+        }
+        else if entry.sky.main == "Snow" {
+            return Color.black
+        }
+        else {
+            return Color.white
         }
     }
     

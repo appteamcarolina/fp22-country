@@ -7,30 +7,63 @@
 
 import XCTest
 @testable import fp22_country
+@testable import fp22_countryWidgetExtension
 
 class fp22_countryTests: XCTestCase {
+    var sut: WidgetViewModel!
+    var entry: SimpleEntry!
+
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        try super.setUpWithError()
+        sut = WidgetViewModel()
+        entry = .placeholder()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
+        try super.tearDownWithError()
+    }
+    
+    
+    func testEmojiMap() {
+        let guess = "👕"
+        
+        let feedback = sut.findEmojis(entry: entry)
+        
+        XCTAssertEqual(guess, feedback, "Fallback emoji function works")
+        
+    }
+    
+    func testHourDetermine() {
+        let guess = "\(Int(entry.weather.day))"
+        
+        let feedback = sut.hourDetermine(entry: entry)
+        
+        XCTAssertEqual(guess, feedback, "Hour determine function works")
+
+        
+    }
+    
+    func testAiStore() {
+        AIStore.save(choices: "Jacket")
+        
+        
+        let feedback = AIStore.fetchChoices()
+        
+        XCTAssertEqual("Jacket", feedback, "AI Save works")
+    }
+    
+    
+    func testWeatherStoreCity() {
+        WeatherStore.save(city: "Chapel Hill", country: "USA", weekForecast: .example, tempForecasts: .placeholder(), sky: .placeholder())
+        
+        let feedback = WeatherStore.fetchCity()
+        
+        XCTAssertEqual("Chapel Hill", feedback, "AI Save works")
+
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+   
 
 }

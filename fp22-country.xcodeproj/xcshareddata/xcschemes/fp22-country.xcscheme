@@ -48,6 +48,26 @@
                ReferencedContainer = "container:fp22-country.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "7815601528147CC3002928E9"
+               BuildableName = "fp22_countryTests.xctest"
+               BlueprintName = "fp22_countryTests"
+               ReferencedContainer = "container:fp22-country.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "7815602228147D2A002928E9"
+               BuildableName = "fp22Tests.xctest"
+               BlueprintName = "fp22Tests"
+               ReferencedContainer = "container:fp22-country.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
